@@ -1,8 +1,11 @@
-package com.example.keepy;
+package com.keepy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LogIn extends AppCompatActivity {
 
@@ -10,5 +13,8 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+    }
+
+    public void login(View view) {
     }
 }

@@ -1,4 +1,4 @@
-package com.example.keepy;
+package com.keepy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
