@@ -85,7 +85,7 @@
             android:textColor="#4d4d4d" />
 
         <Button
-            android:id="@+id/Buttonlogin"
+            android:id="@+id/Buttontologin"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
