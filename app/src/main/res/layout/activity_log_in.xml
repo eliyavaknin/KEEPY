@@ -39,7 +39,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/emailLogin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
@@ -63,7 +63,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/passwordLogin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
@@ -76,12 +76,13 @@
             android:textSize="18dp" />
 
         <TextView
-            android:id="@+id/editText1"
+            android:id="@+id/RecoveryPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ems="10"
-            android:text="Forget Your Password? Recovery It"
+            android:clickable="true"
+            android:text="Forget Your Password?"
             android:textColor="#4d4d4d" />
 
         <Button
@@ -96,7 +97,6 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/orange_button_background"
             android:baselineAligned="false"
-            android:onClick="login"
             android:text="Log In"
             android:textColor="#ffffff"
             android:textSize="24sp"

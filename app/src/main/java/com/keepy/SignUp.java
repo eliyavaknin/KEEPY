@@ -68,62 +68,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-    }
-    private void onSignupClick() {
-        if (!TextUtils.isEmpty(mEmail.getText()) && Patterns.EMAIL_ADDRESS.matcher(mEmail.getText()).matches()){
-            Toast.makeText(SignUp.this,"Invalid Email",Toast.LENGTH_LONG).show();
-            return;
-        }
-    }
+    }}
 
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null){
-//            currentUser.reload();
-//        }
-//    }
-//    private void registerUser() {
-////        String userEmail = email.getText().toString().trim();
-//        String userPassword = password.getText().toString().trim();
-//
-//        if (TextUtils.isEmpty(userEmail)) {
-//            showToast("Enter email address!");
-//            return;
-//        }
-//
-//        if(TextUtils.isEmpty(userPassword)){
-//            showToast("Enter Password!");
-//            return;
-//        }
-//
-//        if(userPassword.length() < 6){
-//            showToast("Password too short, enter minimum 6 characters");
-//            return;x
-//        }
-//
-////        progressBar.setVisibility(View.VISIBLE);
-//        String userEmail = "dwedwedwd@gmail.com";
-//        String userPassword = "dewdeder343434";
-//
-//        //register user
-//        mAuth.createUserWithEmailAndPassword(userEmail,userPassword)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        Log.d("TAG", "New user registration: " + task.isSuccessful());
-//
-//                        if (!task.isSuccessful()) {
-//                            Log.d("TAG", "failed");
-//                        } else {
-//                            Log.d("TAG", "onComplete: here");
-//                            Intent Intent =new Intent(SignUp.this,SignUp.class);
-//                            startActivity(Intent);
-//                        }
-//                    }
-//                });
-//    }
-//
-//    public void sign_up(View view) {
-    }
+
+
