@@ -36,8 +36,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/constraintLayout"
-                        android:layout_width="417dp"
-                        android:layout_height="228dp"
+                        android:layout_width="416dp"
+                        android:layout_height="182dp"
                         android:background="@drawable/top_background"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -45,20 +45,12 @@
 
                         <ImageView
                             android:id="@+id/imageView"
-                            android:layout_width="410dp"
-                            android:layout_height="246dp"
+                            android:layout_width="409dp"
+                            android:layout_height="191dp"
                             android:scaleType="fitXY"
                             app:srcCompat="@drawable/circles"
-                            tools:layout_editor_absoluteX="3dp"
+                            tools:layout_editor_absoluteX="4dp"
                             tools:layout_editor_absoluteY="-9dp" />
-
-                        <ImageView
-                            android:id="@+id/imageView5"
-                            android:layout_width="192dp"
-                            android:layout_height="156dp"
-                            app:srcCompat="@drawable/username"
-                            tools:layout_editor_absoluteX="115dp"
-                            tools:layout_editor_absoluteY="16dp" />
 
                         <TextView
                             android:id="@+id/textView5"
@@ -67,27 +59,27 @@
                             android:text="Welcome ....."
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            tools:layout_editor_absoluteX="141dp"
-                            tools:layout_editor_absoluteY="169dp" />
+                            tools:layout_editor_absoluteX="138dp"
+                            tools:layout_editor_absoluteY="118dp" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <LinearLayout
-                        android:layout_width="392dp"
-                        android:layout_height="255dp"
+                        android:layout_width="410dp"
+                        android:layout_height="198dp"
                         android:orientation="vertical"
                         tools:layout_editor_absoluteX="0dp"
-                        tools:layout_editor_absoluteY="259dp">
+                        tools:layout_editor_absoluteY="199dp">
 
                         <LinearLayout
-                            android:layout_width="391dp"
+                            android:layout_width="407dp"
                             android:layout_height="191dp"
                             android:layout_margin="1dp"
                             android:orientation="horizontal">
 
                             <LinearLayout
-                                android:layout_width="366dp"
-                                android:layout_height="155dp"
+                                android:layout_width="391dp"
+                                android:layout_height="wrap_content"
                                 android:layout_margin="15dp"
                                 android:layout_weight="0.3333"
                                 android:background="@drawable/grey_background"
@@ -140,8 +132,8 @@
                                     android:layout_width="205dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="right"
-                                    android:text="Click here to see more"
                                     android:background="@drawable/write_background"
+                                    android:text="Click here to see more"
                                     android:textColor="#000000"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
@@ -161,8 +153,8 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        android:layout_width="391dp"
-        android:layout_height="69dp"
+        android:layout_width="408dp"
+        android:layout_height="70dp"
         android:layout_gravity="bottom"
         android:backgroundTint="#c9daf8"
         android:gravity="bottom"
@@ -269,8 +261,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/imageView1"
@@ -291,13 +282,6 @@
 
 
     </com.google.android.material.bottomappbar.BottomAppBar>
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
