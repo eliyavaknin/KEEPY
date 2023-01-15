@@ -28,10 +28,19 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        View view = findViewById(R.id.RecoveryPassword);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openloginpage();
+            }
+
+        });
         mAuth = FirebaseAuth.getInstance();
         mlogin = findViewById(R.id.Buttontologin);
         mEmail = findViewById(R.id.emailLogin);
         mPassword = findViewById(R.id.passwordLogin);
+
         mlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +73,10 @@ public class LogIn extends AppCompatActivity {
     }
     public void openHomePage () {
         Intent Intent = new Intent(LogIn.this, UserKeeper.class);
+        startActivity(Intent);
+    }
+    public void openloginpage() {
+        Intent Intent = new Intent(LogIn.this, ForgotPassword.class);
         startActivity(Intent);
     }
 }

@@ -21,6 +21,12 @@ public class UserKeeper extends AppCompatActivity {
                 openMainpage();
             }
         });
+//        findViewById(R.id.paymentContainer).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openPaymentPage();
+//            }
+//        });
     }
     public void openMainpage(){
 
@@ -28,5 +34,10 @@ public class UserKeeper extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+//    public void openPaymentPage(){
+//
+//        Intent intent =new Intent(UserKeeper.this,Payment.class);
+//        startActivity(intent);
+//    }
 
 }

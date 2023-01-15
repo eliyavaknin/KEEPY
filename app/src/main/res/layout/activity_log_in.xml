@@ -82,7 +82,7 @@
             android:layout_marginTop="5dp"
             android:ems="10"
             android:clickable="true"
-            android:text="Forget Your Password?"
+            android:text="Forget Your Password? Recovery It"
             android:textColor="#4d4d4d" />
 
         <Button
@@ -111,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="Log In Page"
+        android:text="Log In"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold"
