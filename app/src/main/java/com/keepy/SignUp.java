@@ -25,6 +25,11 @@ public class SignUp extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPassword;
     private EditText mConfirmPassword;
+    private Button mIsClientBtn;
+    private Button mIsKeeperBtn;
+
+    private boolean mIsClient = false;
+    private boolean mIsKeeper = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,33 @@ public class SignUp extends AppCompatActivity {
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
         mConfirmPassword = findViewById(R.id.confirm_password);
+        mIsClientBtn = findViewById(R.id.isClient);
+        mIsClientBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIsClient = !mIsClient;
+                if (mIsClient) {
+                    mIsClientBtn.setBackground(getDrawable(R.drawable.orange_button_background));
+                    return;
+                }
+                mIsClientBtn.setBackground(getDrawable(R.drawable.grey_button_background));
+            }
+        });
+
+        mIsKeeperBtn = findViewById(R.id.isKeeper);
+        mIsKeeperBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIsKeeper = !mIsKeeper;
+                if (mIsKeeper) {
+                    mIsKeeperBtn.setBackground(getDrawable(R.drawable.orange_button_background));
+                    return;
+                }
+                mIsKeeperBtn.setBackground(getDrawable(R.drawable.grey_button_background));
+            }
+        });
+
+
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +77,10 @@ public class SignUp extends AppCompatActivity {
                 }
                 if (!mPassword.getText().toString().equals(mConfirmPassword.getText().toString())){
                     Toast.makeText(v.getContext(),"Passwords doesn't match",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (!mIsClient && !mIsKeeper) {
+                    Toast.makeText(v.getContext(),"You need to select at least one - Client or Keeper",Toast.LENGTH_LONG).show();
                     return;
                 }
                 mAuth.createUserWithEmailAndPassword(mEmail.getText().toString(), mPassword.getText().toString())
