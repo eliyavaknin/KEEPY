@@ -17,16 +17,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="415dp"
-        android:layout_height="565dp"
+        android:layout_width="418dp"
+        android:layout_height="550dp"
         android:background="@drawable/write_background"
         android:orientation="vertical"
         android:padding="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:id="@+id/textView4"
@@ -80,10 +80,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:ems="10"
             android:clickable="true"
+            android:ems="10"
             android:text="Forget Your Password? Recovery It"
-            android:textColor="#4d4d4d" />
+            android:textColor="#1566e0" />
 
         <Button
             android:id="@+id/Buttontologin"
