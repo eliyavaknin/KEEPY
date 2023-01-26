@@ -46,7 +46,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 mIsClient = !mIsClient;
                 if (mIsClient) {
-                    mIsClientBtn.setBackground(getDrawable(R.drawable.orange_button_background));
+                    mIsClientBtn.setBackground(getDrawable(R.drawable.blue_button_background));
                     return;
                 }
                 mIsClientBtn.setBackground(getDrawable(R.drawable.grey_button_background));
@@ -59,7 +59,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 mIsKeeper = !mIsKeeper;
                 if (mIsKeeper) {
-                    mIsKeeperBtn.setBackground(getDrawable(R.drawable.orange_button_background));
+                    mIsKeeperBtn.setBackground(getDrawable(R.drawable.blue_button_background));
                     return;
                 }
                 mIsKeeperBtn.setBackground(getDrawable(R.drawable.grey_button_background));

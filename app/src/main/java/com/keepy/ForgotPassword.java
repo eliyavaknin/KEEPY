@@ -22,24 +22,25 @@ public class ForgotPassword extends AppCompatActivity {
             }
 
         });
+
         Button button= findViewById(R.id.ButtonReset);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openResetpage();
+                openresetpage();
             }
 
         });
-
     }
 
     public void openloginpage() {
         Intent Intent = new Intent(ForgotPassword.this, LogIn.class);
         startActivity(Intent);
     }
-
-    public void openResetpage() {
-        Intent Intent = new Intent(ForgotPassword.this, EditProfile.class);
+    public void openresetpage() {
+        Intent Intent = new Intent(ForgotPassword.this, ResetPassword.class);
         startActivity(Intent);
     }
+
+
 }
