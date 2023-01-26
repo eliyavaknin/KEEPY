@@ -176,14 +176,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="408dp"
-                            android:layout_height="240dp"
-                            android:scaleType="fitXY"
-                            app:srcCompat="@drawable/circles"
-                            tools:layout_editor_absoluteX="4dp"
-                            tools:layout_editor_absoluteY="-6dp" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -191,24 +183,12 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="CheckBox" />
-            </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
-        android:layout_width="383dp"
-        android:layout_height="253dp"
+        android:layout_width="384dp"
+        android:layout_height="443dp"
         android:layout_margin="15dp"
         android:layout_weight="0.3333"
         android:background="@drawable/withe1_background"
@@ -219,15 +199,159 @@
         tools:layout_editor_absoluteY="114dp">
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/Search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:text="Search"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="15sp"
             android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="374dp"
+            android:layout_height="82dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="25dp"
+            android:hint="Location"
+            android:textColorHint="#000000"
+            app:helperTextTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Search">
+
+            <AutoCompleteTextView
+                android:id="@+id/locationEdit"
+                android:layout_width="341dp"
+                android:layout_height="45dp"
+                android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                android:drawablePadding="16dp"
+                android:hint="Location"
+                android:inputType="none"
+
+                android:paddingLeft="14dp"
+
+                android:textColorHint="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/domain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="16dp"
+            android:paddingVertical="1dp"
+            android:paddingBottom="15dp"
+            android:text="Choose a domain"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.627"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Search"
+            tools:ignore="MissingConstraints" />
+
+
+        <Button
+            android:id="@+id/Babysitter"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/grey_button_background"
+            android:padding="5dp"
+            android:paddingHorizontal="10dp"
+            android:text="Babysitter"
+
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.346"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/domain"
+            tools:ignore="MissingConstraints" />
+
+
+        <Button
+            android:id="@+id/HouseKeeper"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/grey_button_background"
+            android:paddingHorizontal="10dp"
+            android:text="HouseKeeper "
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            app:layout_constraintHorizontal_bias="0.960"
+            app:layout_constraintTop_toBottomOf="@+id/domain"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/Therapist"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/grey_button_background"
+            android:paddingHorizontal="10dp"
+            android:text="Therapist"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.849"
+            app:layout_constraintStart_toEndOf="@+id/Babysitter"
+            app:layout_constraintTop_toBottomOf="@+id/domain"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/Dogister"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/grey_button_background"
+            android:paddingHorizontal="10dp"
+            android:text="Dogister"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/Babysitsdisabilities"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/domain"
+            app:layout_constraintVertical_bias="0.075"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/Babysitsdisabilities"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/grey_button_background"
+            android:padding="5dp"
+            android:paddingHorizontal="10dp"
+            android:text=" babysits disabilities"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/domain"
+            tools:ignore="MissingConstraints" />
+
 
     </LinearLayout>
 

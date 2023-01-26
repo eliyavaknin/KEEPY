@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -21,6 +22,7 @@ public class UserKeeper extends AppCompatActivity {
                 openMainpage();
             }
         });
+
 //        findViewById(R.id.paymentContainer).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -34,6 +36,7 @@ public class UserKeeper extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
 //    public void openPaymentPage(){
 //
 //        Intent intent =new Intent(UserKeeper.this,Payment.class);
@@ -41,3 +44,5 @@ public class UserKeeper extends AppCompatActivity {
 //    }
 
 }
+
+
