@@ -14,10 +14,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 
 public class SignUp extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -36,6 +42,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         mAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         mSignUp = findViewById(R.id.confirmSignUp);
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
@@ -87,10 +94,41 @@ public class SignUp extends AppCompatActivity {
                         .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("signup", "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    User newUser = new User(mEmail.getText().toString(), mPassword.getText().toString(),mIsClient ,mIsKeeper);
+//                                    FirebaseDatabase.getInstance().getReference("Users").child(user.getUid()).setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
+//
+//                                        @Override
+//                                        public void onComplete(@NonNull Task<Void> task) {
+//                                            if (task.isSuccessful()) {
+//                                                Log.d("signup", "updateUses:success");
+//
+//                                            }
+//                                            else{
+//                                                Log.d("signup", "updateUses:failed");
+//
+//                                            }
+//                                        }
+//                                    });
+                                    db.collection("Users")
+                                            .add(user)
+                                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                @Override
+                                                public void onSuccess(DocumentReference documentReference) {
+                                                    Log.d("signup", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.w("signup", "Error adding document", e);
+                                                }
+                                            });
+
                                     //updateUI(user);
                                 } else {
                                     // If sign in fails, display a message to the user.
