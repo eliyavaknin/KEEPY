@@ -14,24 +14,14 @@ public class ResetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
-        Button button = findViewById(R.id.pagekeeper);
+        Button button = findViewById(R.id.pageclient);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openPagekeeper();
+                openPageclient();
             }
 
         });
-        findViewById(R.id.pageclient).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {openPageclient();}
-
-        });
-    }
-
-    public void openPagekeeper() {
-        Intent Intent = new Intent(ResetPassword.this, UserKeeper.class);
-        startActivity(Intent);
     }
 
     public void openPageclient() {

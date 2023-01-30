@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d1d1ff">
+    android:background="#d1d1ff"
+    tools:context=".EditProfileKeepy">
+
 
     <LinearLayout
         android:layout_width="383dp"
@@ -107,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="25dp"
-                    android:hint="Year of birth"
+                    android:hint="Birth year"
                     android:textColorHint="#000000"
                     app:helperTextTextColor="@android:color/holo_red_dark"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +190,7 @@
                     android:layout_marginTop="30dp"
                     android:paddingVertical="10dp"
                     android:paddingBottom="15dp"
-                    android:text="Domain"
+                    android:text="Select your type :"
                     android:textColor="#000000"
                     android:textSize="15sp"
                     android:textStyle="bold"

@@ -1,6 +1,7 @@
 package com.keepy;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -63,6 +64,14 @@ public class UserClient extends AppCompatActivity {
                 mIsDogisterBtn.setBackground(getDrawable(R.drawable.grey_button_background));
             }
         });
+        findViewById(R.id.profileclientContainer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEditProfileClient();
+            }
+
+        });
+
 
         mIsHouseKeeperBtn = findViewById(R.id.HouseKeeper);
         mIsHouseKeeperBtn.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +125,11 @@ public class UserClient extends AppCompatActivity {
             }
         });
 
+    }
+    public void openEditProfileClient(){
+
+        Intent intent =new Intent(UserClient.this,EditProfileClient.class);
+        startActivity(intent);
     }
 }
 

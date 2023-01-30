@@ -37,7 +37,7 @@ public class EditProfileKeepy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile_client);
+        setContentView(R.layout.activity_edit_profile_keepy);
 
         location_Edit = findViewById(R.id.locationEdit);
 

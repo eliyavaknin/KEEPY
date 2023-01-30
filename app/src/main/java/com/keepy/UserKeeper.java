@@ -21,6 +21,14 @@ public class UserKeeper extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 openMainpage();
             }
+
+        });
+        findViewById(R.id.profilekeeperContainer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEditProfileKeeper();
+            }
+
         });
 
 //        findViewById(R.id.paymentContainer).setOnClickListener(new View.OnClickListener() {
@@ -34,6 +42,11 @@ public class UserKeeper extends AppCompatActivity {
 
         Intent intent =new Intent(UserKeeper.this,MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+    public void openEditProfileKeeper(){
+
+        Intent intent =new Intent(UserKeeper.this,EditProfileKeepy.class);
         startActivity(intent);
     }
 

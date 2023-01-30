@@ -135,14 +135,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="409dp"
-                        android:layout_height="187dp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/circles"
-                        tools:layout_editor_absoluteX="4dp"
-                        tools:layout_editor_absoluteY="-5dp" />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -308,7 +300,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/profile"
+                android:id="@+id/profilekeeperContainer"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
