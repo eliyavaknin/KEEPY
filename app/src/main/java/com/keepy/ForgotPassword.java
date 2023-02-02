@@ -38,7 +38,7 @@ public class ForgotPassword extends AppCompatActivity {
         startActivity(Intent);
     }
     public void openresetpage() {
-        Intent Intent = new Intent(ForgotPassword.this, ResetPassword.class);
+        Intent Intent = new Intent(ForgotPassword.this, ReceiveCode.class);
         startActivity(Intent);
     }
 

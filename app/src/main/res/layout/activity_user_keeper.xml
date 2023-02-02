@@ -240,10 +240,10 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        android:layout_width="408dp"
-        android:layout_height="70dp"
+        android:layout_width="414dp"
+        android:layout_height="69dp"
         android:layout_gravity="bottom"
-        android:backgroundTint="#c9daf8"
+        android:backgroundTint="@color/white"
         android:gravity="bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="BottomAppBar,MissingConstraints"
