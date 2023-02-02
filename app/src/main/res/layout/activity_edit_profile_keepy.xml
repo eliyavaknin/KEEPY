@@ -21,8 +21,8 @@
         tools:layout_editor_absoluteY="114dp">
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="800dp">
+            android:layout_width="383dp"
+            android:layout_height="758dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Full name"
                     android:textColorHint="#000000"
                     app:helperTextTextColor="@android:color/holo_red_dark"
@@ -60,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Phone"
                     android:textColorHint="#000000"
                     app:helperTextTextColor="@android:color/holo_red_dark"
@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Location"
                     android:textColorHint="#000000"
                     app:helperTextTextColor="@android:color/holo_red_dark"
@@ -97,30 +97,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:drawableLeft="@drawable/ic_baseline_location_on_24"
-                        android:drawablePadding="16dp"
-                        android:inputType="none"
-                        android:paddingLeft="14dp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/Date"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="25dp"
-                    android:hint="Birth year"
-                    android:textColorHint="#000000"
-                    app:helperTextTextColor="@android:color/holo_red_dark"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/location">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/DateEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:drawableLeft="@drawable/ic_baseline_date_range_24"
                         android:drawablePadding="16dp"
                         android:inputType="none"
                         android:paddingLeft="14dp" />
@@ -140,7 +116,9 @@
                     app:helperTextTextColor="@android:color/holo_red_dark"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Price">
+                    app:layout_constraintTop_toBottomOf="@+id/location"
+                    tools:layout_editor_absoluteY="301dp">
+
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/AboutMeEdit"
@@ -157,37 +135,11 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-
-                    android:id="@+id/Price"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="25dp"
-                    android:hint="Price"
-                    android:textColorHint="#000000"
-                    app:helperTextTextColor="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Date">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/PriceEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:drawableLeft="@drawable/ic_baseline_attach_money_24"
-                        android:drawablePadding="16dp"
-                        android:inputType="number"
-                        android:lines="1" />
-                </com.google.android.material.textfield.TextInputLayout>
-
 
                 <TextView
                     android:id="@+id/domain"
-                    android:layout_width="368dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_width="337dp"
+                    android:layout_height="43dp"
                     android:paddingVertical="10dp"
                     android:paddingBottom="15dp"
                     android:text="Select your type :"
@@ -195,11 +147,9 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.627"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/AboutMe"
                     tools:ignore="MissingConstraints" />
-
 
                 <Button
                     android:id="@+id/Dogister"
@@ -207,19 +157,21 @@
                     android:layout_width="81dp"
                     android:layout_height="28dp"
                     android:layout_marginTop="4dp"
+                    android:layout_marginEnd="200dp"
                     android:layout_weight="1"
                     android:background="@drawable/grey_button_background"
                     android:paddingHorizontal="10dp"
+
                     android:text="Dogister"
                     android:textColor="#000000"
                     android:textSize="11sp"
                     android:textStyle="normal"
                     app:layout_constraintBottom_toTopOf="@+id/Babysitsdisabilities"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.065"
+                    app:layout_constraintHorizontal_bias="0.117"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/domain"
-                    app:layout_constraintVertical_bias="0.075"
+                    app:layout_constraintVertical_bias="0.107"
                     tools:ignore="MissingConstraints" />
 
                 <Button
@@ -227,19 +179,23 @@
                     style="@android:style/Widget.Button"
                     android:layout_width="96dp"
                     android:layout_height="28dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:background="@drawable/grey_button_background"
                     android:padding="5dp"
+
                     android:paddingHorizontal="10dp"
                     android:text="Babysitter"
                     android:textColor="#000000"
                     android:textSize="11sp"
                     android:textStyle="normal"
+                    app:layout_constraintBottom_toTopOf="@+id/HouseKeeper"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.346"
+                    app:layout_constraintHorizontal_bias="0.044"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/domain"
+                    app:layout_constraintVertical_bias="0.708"
                     tools:ignore="MissingConstraints" />
 
                 <Button
@@ -255,12 +211,12 @@
                     android:textColor="#000000"
                     android:textSize="11sp"
                     android:textStyle="normal"
-                    app:layout_constraintBottom_toBottomOf="@+id/Dogister"
-                    app:layout_constraintEnd_toStartOf="@+id/Therapist"
-                    app:layout_constraintHorizontal_bias="0.960"
-                    app:layout_constraintStart_toEndOf="@+id/Dogister"
+                    app:layout_constraintBottom_toBottomOf="@+id/Babysitsdisabilities"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.041"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/domain"
-                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintVertical_bias="0.529"
                     tools:ignore="MissingConstraints" />
 
                 <Button
@@ -268,7 +224,7 @@
                     style="@android:style/Widget.Button"
                     android:layout_width="86dp"
                     android:layout_height="28dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="56dp"
                     android:layout_weight="1"
                     android:background="@drawable/grey_button_background"
                     android:paddingHorizontal="10dp"
@@ -276,10 +232,12 @@
                     android:textColor="#000000"
                     android:textSize="11sp"
                     android:textStyle="normal"
+                    app:layout_constraintBottom_toTopOf="@+id/Babysitsdisabilities"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.849"
-                    app:layout_constraintStart_toEndOf="@+id/Babysitter"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/Babysitsdisabilities"
                     app:layout_constraintTop_toBottomOf="@+id/domain"
+                    app:layout_constraintVertical_bias="0.845"
                     tools:ignore="MissingConstraints" />
 
                 <Button
@@ -287,7 +245,9 @@
                     style="@android:style/Widget.Button"
                     android:layout_width="120dp"
                     android:layout_height="28dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="180dp"
+                    android:layout_marginEnd="200dp"
+
                     android:layout_weight="1"
                     android:background="@drawable/grey_button_background"
                     android:padding="5dp"
@@ -297,10 +257,76 @@
                     android:textSize="11sp"
                     android:textStyle="normal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.092"
+                    app:layout_constraintHorizontal_bias="0.19"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/domain"
                     tools:ignore="MissingConstraints" />
+
+                <EditText
+                    android:id="@+id/editTextNumber2"
+                    android:layout_width="174dp"
+                    android:layout_height="40dp"
+                    android:drawableRight="@drawable/shekel2"
+                    android:ems="10"
+                    android:inputType="number"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.762"
+                    app:layout_constraintStart_toEndOf="@+id/Babysitter"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+                <EditText
+                    android:id="@+id/editTextNumber3"
+                    android:layout_width="174dp"
+                    android:layout_height="40dp"
+                    android:drawableRight="@drawable/shekel2"
+                    android:ems="10"
+                    android:inputType="number"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.7"
+                    app:layout_constraintStart_toEndOf="@+id/Babysitsdisabilities"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber4" />
+
+                <EditText
+                    android:id="@+id/editTextNumber4"
+                    android:layout_width="174dp"
+                    android:layout_height="40dp"
+                    android:drawableRight="@drawable/shekel2"
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.783"
+                    app:layout_constraintStart_toEndOf="@+id/Therapist"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
+
+                <EditText
+                    android:id="@+id/editTextNumber5"
+                    android:layout_width="174dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="74dp"
+                    android:drawableRight="@drawable/shekel2"
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toEndOf="@+id/HouseKeeper"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+
+                <EditText
+                    android:id="@+id/editTextNumber"
+                    android:layout_width="175dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="60dp"
+                    android:drawableRight="@drawable/shekel2"
+
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/Dogister"
+                    app:layout_constraintTop_toTopOf="@+id/domain" />
 
                 <Button
                     android:id="@+id/button2"
@@ -308,8 +334,8 @@
                     android:layout_width="166dp"
                     android:layout_height="37dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="50dp"
                     android:background="@drawable/orange_button_background"
                     android:baselineAligned="false"
                     android:text="Save the changes"
@@ -317,7 +343,7 @@
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.479"
+                    app:layout_constraintHorizontal_bias="0.417"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/Babysitsdisabilities" />
             </androidx.constraintlayout.widget.ConstraintLayout>
