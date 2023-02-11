@@ -33,9 +33,13 @@ public class SignUp extends AppCompatActivity {
     private EditText mConfirmPassword;
     private Button mIsClientBtn;
     private Button mIsKeeperBtn;
+    private Button mIsKeeperAndClientBtn;
+
 
     private boolean mIsClient = false;
     private boolean mIsKeeper = false;
+    private boolean misClientAndKeeper = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +55,14 @@ public class SignUp extends AppCompatActivity {
         mIsClientBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mIsClient = !mIsClient;
-                if (mIsClient) {
-                    mIsClientBtn.setBackground(getDrawable(R.drawable.blue_button_background));
-                    return;
+                toggleIsClient();
+                if(mIsKeeper){
+                    toggleIsKeeper();
                 }
-                mIsClientBtn.setBackground(getDrawable(R.drawable.grey_button_background));
+                if(misClientAndKeeper){
+                    toggleIsClientAndKeeper();
+                }
+
             }
         });
 
@@ -64,15 +70,29 @@ public class SignUp extends AppCompatActivity {
         mIsKeeperBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mIsKeeper = !mIsKeeper;
-                if (mIsKeeper) {
-                    mIsKeeperBtn.setBackground(getDrawable(R.drawable.blue_button_background));
-                    return;
+               toggleIsKeeper();
+                if(mIsClient){
+                    toggleIsClient();
                 }
-                mIsKeeperBtn.setBackground(getDrawable(R.drawable.grey_button_background));
+                if(misClientAndKeeper){
+                    toggleIsClientAndKeeper();
+                }
             }
         });
 
+        mIsKeeperAndClientBtn = findViewById(R.id.isClientAndKeeper);
+        mIsKeeperAndClientBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleIsClientAndKeeper();
+                if(mIsKeeper){
+                    toggleIsKeeper();
+                }
+                if(mIsClient){
+                    toggleIsClient();
+                }
+            }
+        });
 
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +106,7 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(v.getContext(),"Passwords doesn't match",Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (!mIsClient && !mIsKeeper) {
+                if (!mIsClient && !mIsKeeper && !misClientAndKeeper) {
                     Toast.makeText(v.getContext(),"You need to select at least one - Client or Keeper",Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -99,7 +119,7 @@ public class SignUp extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("signup", "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    User newUser = new User(mEmail.getText().toString(), mPassword.getText().toString(),mIsClient ,mIsKeeper);
+                                    User newUser = new User(mEmail.getText().toString(),mIsClient || misClientAndKeeper,mIsKeeper || misClientAndKeeper);
 //                                    FirebaseDatabase.getInstance().getReference("Users").child(user.getUid()).setValue(newUser).addOnCompleteListener(new OnCompleteListener<Void>() {
 //
 //                                        @Override
@@ -115,17 +135,18 @@ public class SignUp extends AppCompatActivity {
 //                                        }
 //                                    });
                                     db.collection("Users")
-                                            .add(user)
+                                            .add(newUser)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                 @Override
                                                 public void onSuccess(DocumentReference documentReference) {
                                                     Log.d("signup", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                                    openMainpage();
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {
-                                                    Log.w("signup", "Error adding document", e);
+                                                    Log.w("signup", "Error adding user", e);
                                                 }
                                             });
 
@@ -142,7 +163,54 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-    }}
+
+    }
+    public void openMainpage(){
+
+        Intent intent =new Intent(SignUp.this,MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    private void toggleIsClient(){
+        mIsClient = !mIsClient;
+        if (mIsClient) {
+            mIsClientBtn.setBackground(getDrawable(R.drawable.blue_button_background));
+            mIsClientBtn.setTextColor(getResources().getColor(R.color.white));
+
+            return;
+        }
+        mIsClientBtn.setBackground(getDrawable(R.drawable.grey_button_background));
+        mIsClientBtn.setTextColor(getResources().getColor(R.color.black));
+
+    }
+
+    private void toggleIsKeeper(){
+        mIsKeeper = !mIsKeeper;
+        if (mIsKeeper) {
+            mIsKeeperBtn.setBackground(getDrawable(R.drawable.blue_button_background));
+            mIsKeeperBtn.setTextColor(getResources().getColor(R.color.white));
+
+            return;
+        }
+        mIsKeeperBtn.setBackground(getDrawable(R.drawable.grey_button_background));
+        mIsKeeperBtn.setTextColor(getResources().getColor(R.color.black));
+
+    }
+
+    private void toggleIsClientAndKeeper(){
+        misClientAndKeeper = !misClientAndKeeper;
+        if (misClientAndKeeper) {
+            mIsKeeperAndClientBtn.setBackground(getDrawable(R.drawable.blue_button_background));
+            mIsKeeperAndClientBtn.setTextColor(getResources().getColor(R.color.white));
+
+            return;
+        }
+        mIsKeeperAndClientBtn.setBackground(getDrawable(R.drawable.grey_button_background));
+        mIsKeeperAndClientBtn.setTextColor(getResources().getColor(R.color.black));
+
+    }
+}
 
 
 
