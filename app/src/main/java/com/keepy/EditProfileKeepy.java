@@ -11,11 +11,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class EditProfileKeepy extends AppCompatActivity {
     private Button mIsDogisterBtn;
     private Button mIsHouseKeeperBtn;
     private Button mIsTherapistBtn;
     private Button mIsBabysitterBtn;
+    private User mCurrentUser;
     private Button mIsBabysitsdisabilitiesBtn;
     String[] items = {"Tel aviv" , "Jerusalem"  , "Ramat gan","Givatayim" , "Bnei brak" , "Haifa"  , "Ashdod","Ashkelon" ,
             "Ramat hasharon","Rishone lezion" ,"Bat yam" ,"Holon" , "Netanya" ,"Raanana" , "Hadera" , "Binyamina" ,"Zichron"
@@ -36,8 +39,17 @@ public class EditProfileKeepy extends AppCompatActivity {
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        mCurrentUser=(User)getIntent().getSerializableExtra("CURR_USER") ;
+
         setContentView(R.layout.activity_edit_profile_keepy);
+        ((TextInputLayout)findViewById(R.id.FullName)).getEditText().setText(mCurrentUser.getmFullName());
+        ((TextInputLayout)findViewById(R.id.Phone)).getEditText().setText(mCurrentUser.getmPhone());
+        ((TextInputLayout)findViewById(R.id.location)).getEditText().setText(mCurrentUser.getmLocation());
+        ((TextInputLayout)findViewById(R.id.AboutMe)).getEditText().setText(mCurrentUser.getmAboutMe());
+
+
 
         location_Edit = findViewById(R.id.locationEdit);
 
