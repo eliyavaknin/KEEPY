@@ -67,7 +67,7 @@ private User mCurrentUser;
     }
     public void updateWelcomeText(){
         TextView welcome = findViewById(R.id.WelcomeUserKeeper);
-        String welcomeKeeper = welcome.getText()+mCurrentUser.getmEmail();
+        String welcomeKeeper = welcome.getText()+mCurrentUser.getmFullName();
         welcome.setText(welcomeKeeper);
         welcome.invalidate();
     }
