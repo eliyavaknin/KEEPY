@@ -39,10 +39,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/inter"
                 android:text="Email"
                 android:textColor="#000000"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textSize="25sp" />
 
             <EditText
                 android:id="@+id/email"
@@ -56,23 +56,25 @@
                 android:inputType="textPersonName"
                 android:textColor="#8e8e8e"
                 android:textColorHint="#8e8e8e"
+                android:fontFamily="@font/inter"
                 android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:text="Password"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/inter"
+                />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -85,17 +87,17 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:text="Confirm Password"
                 android:textColor="#000000"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/inter" />
 
             <EditText
                 android:id="@+id/confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
@@ -109,42 +111,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Who are you?"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:paddingBottom="15dp"
+                android:textSize="22sp"
+                android:fontFamily="@font/inter"
+                android:paddingBottom="7dp"
                 android:textColor="@color/black"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
+
                 <Button
                     android:id="@+id/isClient"
                     style="@android:style/Widget.Button"
-                    android:background="@drawable/grey_button_background"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:background="@drawable/grey_button_background"
+                    android:fontFamily="@font/inter"
                     android:paddingHorizontal="50dp"
-                    android:text="Client"/>
+                    android:text="Client"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
                 <View
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="1" />
+
                 <Button
                     android:id="@+id/isKeeper"
                     style="@android:style/Widget.Button"
-                    android:background="@drawable/grey_button_background"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:background="@drawable/grey_button_background"
+                    android:fontFamily="@font/inter"
                     android:paddingHorizontal="50dp"
-                    android:textStyle="bold"
-                    android:text="Keeper"/>
+                    android:text="Keeper"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
             </LinearLayout>
 
@@ -165,11 +170,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/grey_button_background"
+                    android:fontFamily="@font/inter"
                     android:paddingHorizontal="50dp"
                     android:text="Keeper and Client"
                     android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textSize="17sp" />
 
             </LinearLayout>
 
@@ -189,24 +194,28 @@
                 android:background="@drawable/orange_button_background"
                 android:baselineAligned="false"
                 android:text="Sign Up"
+                android:textStyle="bold"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
-                android:textStyle="bold"
+                android:fontFamily="@font/inter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
     </ScrollView>
+
     <TextView
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:fontFamily="@font/inter"
+        android:paddingVertical="10dp"
         android:text="Sign Up Page"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:paddingVertical="10dp"
+
         app:layout_constraintBottom_toTopOf="@+id/pageContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
