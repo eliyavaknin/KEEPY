@@ -72,7 +72,7 @@ public class LogIn extends AppCompatActivity {
 
     }
     public void openHomePage () {
-        Intent Intent = new Intent(LogIn.this, UserKeeper.class);
+        Intent Intent = new Intent(LogIn.this, UserPage.class);
         startActivity(Intent);
     }
     public void openloginpage() {

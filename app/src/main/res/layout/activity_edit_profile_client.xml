@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,26 +8,27 @@
     tools:context=".EditProfileClient">
 
 
-    <LinearLayout
-        android:layout_width="383dp"
-        android:layout_height="253dp"
-        android:layout_margin="15dp"
-        android:layout_weight="0.3333"
-        android:background="@drawable/withe1_background"
-        android:elevation="5dp"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="114dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@drawable/withe1_background"
+            android:elevation="5dp"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:context=".EditProfileKeepy">
+                android:orientation="vertical">
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -36,7 +37,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Full name"
                     android:textColorHint="#000000"
                     app:helperTextTextColor="@android:color/holo_red_dark"
@@ -45,7 +46,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/FullNameEdit"
+                        android:id="@+id/FullNameEdit_Client"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
@@ -60,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Phone"
                     android:textColorHint="#000000"
                     app:helperTextTextColor="@android:color/holo_red_dark"
@@ -69,253 +70,191 @@
                     app:layout_constraintTop_toBottomOf="@+id/FullName">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/PhoneEdit"
+                        android:id="@+id/PhoneEdit_Client"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:drawableLeft="@drawable/ic_baseline_phone_24"
+                        android:drawableStart="@drawable/ic_baseline_phone_24"
                         android:drawablePadding="16dp"
                         android:inputType="phone"
                         android:lines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/location"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="20dp"
                     android:hint="Location"
                     android:textColorHint="#000000"
-                    app:helperTextTextColor="@android:color/holo_red_dark"
+                    app:helperText="Location"
+                    app:helperTextTextColor="@android:color/darker_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/Phone">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/locationEdit"
+                    <Spinner
+                        android:id="@+id/locationEdit_Client"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:drawableLeft="@drawable/ic_baseline_location_on_24"
                         android:drawablePadding="16dp"
-                        android:inputType="none"
-                        android:paddingLeft="14dp" />
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:id="@+id/AboutMe_Client"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:hint="About me"
+                    android:textColorHint="#000000"
+                    app:helperTextTextColor="@android:color/holo_red_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/location"
+                    tools:layout_editor_absoluteY="301dp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/AboutMeEdit_Client"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="16dp"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:lines="6"
+                        android:overScrollMode="always"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:scrollHorizontally="false" />
+
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <TextView
                     android:id="@+id/domain"
-                    android:layout_width="337dp"
-                    android:layout_height="43dp"
-                    android:layout_marginTop="32dp"
-                    android:paddingVertical="10dp"
-                    android:paddingBottom="15dp"
-                    android:text="Select your type :"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="I am mostly interested in:"
                     android:textColor="#000000"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.543"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/location"
+                    app:layout_constraintTop_toBottomOf="@+id/AboutMe"
                     tools:ignore="MissingConstraints" />
+            </LinearLayout>
 
-                <Button
-                    android:id="@+id/Dogister"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="81dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="200dp"
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/grey_button_background"
-                    android:paddingHorizontal="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    android:text="Dogister"
-                    android:textColor="#000000"
-                    android:textSize="11sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toTopOf="@+id/Babysitsdisabilities"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.117"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/domain"
-                    app:layout_constraintVertical_bias="0.107"
-                    tools:ignore="MissingConstraints" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/Babysitter"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="96dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="36dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/grey_button_background"
-                    android:padding="5dp"
+                        <CheckBox
+                            android:id="@+id/Dogister_ClientBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dogister"
+                            android:textAllCaps="false"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            tools:ignore="MissingConstraints" />
 
-                    android:paddingHorizontal="10dp"
-                    android:text="Babysitter"
-                    android:textColor="#000000"
-                    android:textSize="11sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toTopOf="@+id/HouseKeeper"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.044"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/domain"
-                    app:layout_constraintVertical_bias="0.708"
-                    tools:ignore="MissingConstraints" />
+                        <CheckBox
+                            android:id="@+id/Babysitter_ClientBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Babysitter"
+                            android:textAllCaps="false"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            tools:ignore="MissingConstraints" />
+                    </LinearLayout>
 
-                <Button
-                    android:id="@+id/HouseKeeper"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="93dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/grey_button_background"
-                    android:paddingHorizontal="10dp"
-                    android:text="HouseKeeper "
-                    android:textColor="#000000"
-                    android:textSize="11sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toBottomOf="@+id/Babysitsdisabilities"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.041"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/domain"
-                    app:layout_constraintVertical_bias="0.529"
-                    tools:ignore="MissingConstraints" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/Therapist"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="86dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="56dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/grey_button_background"
-                    android:paddingHorizontal="10dp"
-                    android:text="Therapist"
-                    android:textColor="#000000"
-                    android:textSize="11sp"
-                    android:textStyle="normal"
-                    app:layout_constraintBottom_toTopOf="@+id/Babysitsdisabilities"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/Babysitsdisabilities"
-                    app:layout_constraintTop_toBottomOf="@+id/domain"
-                    app:layout_constraintVertical_bias="0.845"
-                    tools:ignore="MissingConstraints" />
+                        <CheckBox
+                            android:id="@+id/HouseKeeper_Client_Btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:text="HouseKeeper "
+                            android:textAllCaps="false"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
 
-                <Button
-                    android:id="@+id/Babysitsdisabilities"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="120dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="180dp"
-                    android:layout_marginEnd="200dp"
+                        <CheckBox
+                            android:id="@+id/Therapist_Client_Btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:text="Therapist"
 
-                    android:layout_weight="1"
-                    android:background="@drawable/grey_button_background"
-                    android:padding="5dp"
-                    android:paddingHorizontal="10dp"
-                    android:text=" babysits disabilities"
-                    android:textColor="#000000"
-                    android:textSize="11sp"
-                    android:textStyle="normal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.19"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/domain"
-                    tools:ignore="MissingConstraints" />
+                            android:textAllCaps="false"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editTextNumber2"
-                    android:layout_width="174dp"
-                    android:layout_height="40dp"
-                    android:drawableRight="@drawable/shekel2"
-                    android:ems="10"
-                    android:inputType="number"
+                    <CheckBox
+                        android:id="@+id/Babysitsdisabilities_Client_Btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Babysitter disabilities"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
 
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.762"
-                    app:layout_constraintStart_toEndOf="@+id/Babysitter"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+            </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editTextNumber3"
-                    android:layout_width="174dp"
-                    android:layout_height="40dp"
-                    android:drawableRight="@drawable/shekel2"
-                    android:ems="10"
-                    android:inputType="number"
+            <Button
+                android:id="@+id/saveChanges_Client"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/orange_button_background"
+                android:baselineAligned="false"
+                android:text="Save the changes"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
 
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.7"
-                    app:layout_constraintStart_toEndOf="@+id/Babysitsdisabilities"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber4" />
+    <include
+        android:id="@+id/bottomBar"
+        layout="@layout/bottom_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-                <EditText
-                    android:id="@+id/editTextNumber4"
-                    android:layout_width="174dp"
-                    android:layout_height="40dp"
-                    android:drawableRight="@drawable/shekel2"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.783"
-                    app:layout_constraintStart_toEndOf="@+id/Therapist"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
-
-                <EditText
-                    android:id="@+id/editTextNumber5"
-                    android:layout_width="174dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="74dp"
-                    android:drawableRight="@drawable/shekel2"
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.2"
-                    app:layout_constraintStart_toEndOf="@+id/HouseKeeper"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
-
-                <EditText
-                    android:id="@+id/editTextNumber"
-                    android:layout_width="175dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="92dp"
-                    android:layout_marginTop="60dp"
-                    android:drawableRight="@drawable/shekel2"
-
-                    android:ems="10"
-                    android:inputType="number"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/Dogister"
-                    app:layout_constraintTop_toTopOf="@+id/domain" />
-
-                <Button
-                    android:id="@+id/button2"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="166dp"
-                    android:layout_height="37dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/orange_button_background"
-                    android:baselineAligned="false"
-                    android:text="Save the changes"
-                    android:textColor="#ffffff"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.417"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Babysitsdisabilities" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
