@@ -96,6 +96,9 @@ public class EditProfileKeepy extends AppCompatActivity {
             dialog.dismiss();
         });
         viewModel.userLiveData.observe(this, user -> {
+             if(user == null) {
+                return;
+            }
             nameTv.setText(user.getmFullName());
             phoneTv.setText(user.getmPhone());
             for (int i = 0; i < Constants.places.length; i++) {
