@@ -12,47 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KEEPY"
         tools:targetApi="31">
-        <activity
-            android:name=".ReceiveCode"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ContactUs"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".AboutUs"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
         </activity>
         <activity
             android:name=".UserPage"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
         </activity>
         <activity
             android:name=".EditProfileClient"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
         </activity>
         <activity
             android:name=".ResetPassword"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
         </activity>
         <activity
             android:name=".EditProfileKeepy"
