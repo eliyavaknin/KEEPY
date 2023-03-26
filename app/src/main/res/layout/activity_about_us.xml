@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUs">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="172dp"
+        android:layout_height="69dp"
+        android:text=" About us "
+        android:textColor="#1566e0"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="90dp" />
+
+    <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's start telling about us "
+            android:textColor="#1566e0"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="145dp" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="401dp"
+        android:layout_height="77dp"
+        android:padding="15dp"
+        android:text=" keepy is an application that provides service to a wide variety of people."
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="-6dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text=" The app helps to find the service person we need, such as a babysitter, a dog walker, and more."
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="310dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text=" The application provides an efficient solution that is safe and convenient to use, we require recommendations and documents of integrity from the service providers in the application.
+                      Always here at your service!"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="420dp" />
+
+    <ImageView
+            android:layout_width="78dp"
+            android:layout_height="57dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/keepy1"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="317dp"
+            tools:layout_editor_absoluteY="16dp"
+            tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
