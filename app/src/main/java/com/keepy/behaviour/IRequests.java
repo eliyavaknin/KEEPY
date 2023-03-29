@@ -12,4 +12,9 @@ public interface IRequests {
     void onApprove(ServiceRequest request);
 
     void onDecline(ServiceRequest request);
+<<<<<<< HEAD
+
+    void onCanceled(ServiceRequest request);
+=======
+>>>>>>> origin/master
 }

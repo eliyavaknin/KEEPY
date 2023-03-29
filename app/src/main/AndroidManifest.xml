@@ -12,26 +12,74 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KEEPY"
         tools:targetApi="31">
+<<<<<<< HEAD
+        <activity
+            android:name=".Setting"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ReceiveCode"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ContactUs"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AboutUs"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+=======
 
         <activity
             android:name=".AboutUs"
             android:exported="false">
 
+>>>>>>> origin/master
         </activity>
         <activity
             android:name=".UserPage"
             android:exported="false">
+<<<<<<< HEAD
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+=======
 
+>>>>>>> origin/master
         </activity>
         <activity
             android:name=".EditProfileClient"
             android:exported="false">
+<<<<<<< HEAD
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+=======
 
+>>>>>>> origin/master
         </activity>
         <activity
             android:name=".ResetPassword"
             android:exported="false">
+<<<<<<< HEAD
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+=======
 
+>>>>>>> origin/master
         </activity>
         <activity
             android:name=".EditProfileKeepy"

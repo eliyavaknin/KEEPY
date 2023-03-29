@@ -12,6 +12,19 @@
         android:text="Name"
         android:textAlignment="center"
         android:textSize="32sp" />
+<<<<<<< HEAD
+    <TextView
+        android:id="@+id/keeper_profile_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:visibility="gone"
+        android:textColor="#A6A6A6"
+        android:translationY="-15dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+=======
+>>>>>>> origin/master
 
     <RatingBar
         android:id="@+id/keeper_profile_rating"
@@ -41,7 +54,12 @@
             android:textAlignment="center"
             android:textSize="24sp" />
 
+<<<<<<< HEAD
+        <LinearLayout
+            android:orientation="vertical"
+=======
         <TextView
+>>>>>>> origin/master
             android:id="@+id/keeper_profile_services"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

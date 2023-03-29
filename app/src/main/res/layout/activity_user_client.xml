@@ -6,6 +6,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<<<<<<< HEAD
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/keeper_Btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:padding="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:background="@android:color/transparent"
+            android:textColor="#B6B6B6"
+            android:textAllCaps="false"
+            android:id="@+id/keeper_Btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:text="I want to become a keeper" />
+    </LinearLayout>
+
+=======
+>>>>>>> origin/master
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +41,11 @@
         android:paddingBottom="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintTop_toBottomOf="@id/keeper_Btn_layout">
+=======
         app:layout_constraintTop_toTopOf="parent">
+>>>>>>> origin/master
 
         <TextView
             android:id="@+id/Search"

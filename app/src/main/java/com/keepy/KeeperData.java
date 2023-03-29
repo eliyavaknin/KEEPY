@@ -1,7 +1,15 @@
 package com.keepy;
 
+<<<<<<< HEAD
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+=======
 import java.util.HashMap;
 
+>>>>>>> origin/master
 
 /*
  * This class is used to store the data of a keeper
@@ -15,12 +23,44 @@ public class KeeperData {
     private int ratingCount;
     private float rating;
 
+<<<<<<< HEAD
+    private List<ServiceTime> serviceTimes = Constants.Utils.getDefaultAllDayServiceTimes();
+
+=======
+>>>>>>> origin/master
     public KeeperData(HashMap<String,Integer> fees, int rating, int ratingCount) {
         this.fees = fees;
         this.rating = rating;
         this.ratingCount = ratingCount;
     }
 
+<<<<<<< HEAD
+    public List<ServiceTime> getServiceTimes() {
+        return serviceTimes;
+    }
+
+    public void setServiceTimes(List<ServiceTime> serviceTimes) {
+        this.serviceTimes = serviceTimes;
+    }
+
+
+    public boolean servesTime(int startHour,int startMinute) {
+        for (ServiceTime serviceTime : serviceTimes) {
+            if (startHour >= serviceTime.getStartHour() && startHour <= serviceTime.getEndHour()) {
+                if (startHour == serviceTime.getStartHour() && startMinute <  serviceTime.getStartMinute()) {
+                    continue;
+                }
+                if (startHour == serviceTime.getEndHour() && startMinute > serviceTime.getEndMinute()) {
+                    continue;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+=======
+>>>>>>> origin/master
     public float getRating() {
         return rating;
     }

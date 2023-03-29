@@ -2,12 +2,25 @@ package com.keepy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.Button;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import java.util.function.Predicate;
+=======
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+>>>>>>> origin/master
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +39,47 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.ButtonSignUp).setOnClickListener(view ->
                 opensignuppage());
+<<<<<<< HEAD
+
+
+
+    }
+
+    public static TextWatcher getProfileTextWatcher(
+            Activity context,
+            Predicate<String> xyz) {
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    if (xyz.test(editable.toString())) {
+                        if (context instanceof EditProfileClient) {
+                            context.findViewById(R.id.saveChanges_Client).setEnabled(false);
+                        } else if (context instanceof EditProfileKeepy) {
+                            context.findViewById(R.id.saveChanges_Keeper).setEnabled(false);
+                        }
+                    } else {
+                        if (context instanceof EditProfileClient) {
+                            context.findViewById(R.id.saveChanges_Client).setEnabled(true);
+                        } else if (context instanceof EditProfileKeepy) {
+                            context.findViewById(R.id.saveChanges_Keeper).setEnabled(true);
+                        }
+                    }
+                }
+            }
+        };
+=======
+>>>>>>> origin/master
     }
 
     public void openHomepage() {

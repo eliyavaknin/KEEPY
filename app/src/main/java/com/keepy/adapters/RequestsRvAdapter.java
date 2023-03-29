@@ -1,5 +1,9 @@
 package com.keepy.adapters;
 
+<<<<<<< HEAD
+import android.graphics.Color;
+=======
+>>>>>>> origin/master
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +21,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+<<<<<<< HEAD
+/*
+ * This class is an adapter for the requests recycler view
+ * We use it in the RequestsActivity and the ScheduleActivity
+ * We use it to show the requests of the client or the keeper
+=======
 
 
 
@@ -25,6 +35,7 @@ import java.util.List;
     * This class is an adapter for the requests recycler view
     * We use it in the RequestsActivity and the ScheduleActivity
     * We use it to show the requests of the client or the keeper
+>>>>>>> origin/master
  */
 public class RequestsRvAdapter extends RecyclerView.Adapter<RequestsRvAdapter.RequestsViewHolder> {
 
@@ -32,6 +43,19 @@ public class RequestsRvAdapter extends RecyclerView.Adapter<RequestsRvAdapter.Re
 
 
     private final IRequests iRequests;
+<<<<<<< HEAD
+    private boolean isRequestPreSend;
+    private boolean isClientView;
+
+    public RequestsRvAdapter(List<ServiceRequest> requestList,
+                             IRequests iRequests,
+                             boolean isClientView,
+                             boolean waitOnly,
+                             boolean isRequestPreSend,
+                             boolean approvedOnly) {
+        this.isRequestPreSend = isRequestPreSend;
+        this.isClientView = isClientView;
+=======
 
 
     public RequestsRvAdapter(List<ServiceRequest> requestList,
@@ -39,6 +63,7 @@ public class RequestsRvAdapter extends RecyclerView.Adapter<RequestsRvAdapter.Re
                              boolean waitOnly,
                              boolean approvedOnly) {
 
+>>>>>>> origin/master
 
         // if we want to show only the waiting requests
         if (waitOnly) {
@@ -64,7 +89,11 @@ public class RequestsRvAdapter extends RecyclerView.Adapter<RequestsRvAdapter.Re
 
     // this class is a view holder for the requests recycler view
     // we make it static because we do not need to access any variable from the RequestsRvAdapter
+<<<<<<< HEAD
+    class RequestsViewHolder extends RecyclerView.ViewHolder {
+=======
     static class RequestsViewHolder extends RecyclerView.ViewHolder {
+>>>>>>> origin/master
 
         private final TextView name, type, comment, location;
 
@@ -78,11 +107,54 @@ public class RequestsRvAdapter extends RecyclerView.Adapter<RequestsRvAdapter.Re
             approve = itemView.findViewById(R.id.approve_request);
             decline = itemView.findViewById(R.id.decline_request);
             location = itemView.findViewById(R.id.location_request);
+<<<<<<< HEAD
+            if (!isRequestPreSend && !isClientView) {
+                decline.setVisibility(View.GONE);
+                approve.setBackgroundColor(Color.RED);
+            }
+            if(isClientView && decline != null){
+                decline.setVisibility(View.GONE);
+            }
+=======
+>>>>>>> origin/master
         }
 
 
         private String removeLastIfNonAlpha(String str) {
             if (!Character.isAlphabetic(str.charAt(str.length() - 1)))
+<<<<<<< HEAD
+                return str.length() <= 1 ? str : str.substring(0, str.length() - 2);
+            return str;
+        }
+
+        public void bind(ServiceRequest request,
+                         IRequests iRequests) {
+            if(isClientView)
+                name.setText("Keeper name: " + (request.getKeeperName().isEmpty() ? "Anonymous" : request.getKeeperName()));
+            else
+                name.setText("Client name: " + request.getClientName());
+            type.setText("Service type: " + removeLastIfNonAlpha(request.getType()));
+            location.setText("Requested service at: " + request.getLocation());
+
+            if(request.getClientComment() == null)
+                if(isClientView)
+                    comment.setText("My comment: No comment");
+                else
+                    comment.setText("Client comment: No comment from client");
+            else {
+                if (isClientView) {
+                    comment.setText("My comment: " + request.getClientComment());
+                } else {
+                    comment.setText("Client comment: " + request.getClientComment());
+                }
+            }
+            if(!isRequestPreSend) {
+                approve.setText(isClientView ? "Cancel request" : "Cancel service");
+                approve.setOnClickListener(v -> iRequests.onCanceled(request));
+            }else {
+                approve.setOnClickListener(v -> iRequests.onApprove(request));
+            }
+=======
                 return str.length() <= 1 ? str:  str.substring(0, str.length() - 2);
             return str;
         }
@@ -93,6 +165,7 @@ public class RequestsRvAdapter extends RecyclerView.Adapter<RequestsRvAdapter.Re
             location.setText("Requested service at: " + request.getLocation());
             comment.setText("Client comment: " + request.getClientComment());
             approve.setOnClickListener(v -> iRequests.onApprove(request));
+>>>>>>> origin/master
             decline.setOnClickListener(v -> iRequests.onDecline(request));
         }
     }
