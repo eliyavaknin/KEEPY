@@ -1,6 +1,7 @@
 package com.keepy;
 
 import android.annotation.SuppressLint;
+<<<<<<< HEAD
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -38,10 +39,14 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+=======
+import android.graphics.Color;
+>>>>>>> origin/master
 
 public class Constants {
 
 
+<<<<<<< HEAD
     public static final String PrefLang = "English";
 
     public static final String AppName = "Keepy";
@@ -58,12 +63,17 @@ public class Constants {
     public static final String BabySitterDisabilitiesType_View = "Babysitter for children with disabilities";
 
 
+=======
+>>>>>>> origin/master
     @SuppressLint("SimpleDateFormat")
     public static String getDateStringFromTimeMilies(long timeMillies) {
         return new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm")
                 .format(new java.util.Date(timeMillies));
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     public static String[] places = {"Tel aviv", "Jerusalem", "Ramat gan", "Givatayim", "Bnei brak", "Haifa", "Ashdod", "Ashkelon",
             "Ramat hasharon", "Rishone lezion", "Bat yam", "Holon", "Netanya", "Raanana", "Hadera", "Binyamina", "Zichron"
             , "Rehovot", "Nes ziona", "Eilat", "Petah tiqwa", "Beer sheva", "Afula", "Akko", "Arad", "Beit shemesh", "Elad"
@@ -87,6 +97,7 @@ public class Constants {
     public static final String ServiceRequestsCollection_incoming_requestDateField = "requestDate";
 
 
+<<<<<<< HEAD
     public static class Utils {
 
         public static String getRequestStatusString(int status) {
@@ -683,6 +694,21 @@ public class Constants {
                     return BabySitterDisabilitiesType_View;
                 case HouseKeeperType:
                     return HouseKeeperType_View;
+=======
+    static class Utils {
+        public static String getKeeperNameAsAppropriateString(String keeperType) {
+            switch (keeperType) {
+                case "dogister":
+                    return "Dogister";
+                case "therapist":
+                    return "Therapist";
+                case "babysitter":
+                    return "Babysitter";
+                case "babysitter_disabilities":
+                    return "Babysitter for children with disabilities";
+                case "housekeeper":
+                    return "Housekeeper";
+>>>>>>> origin/master
                 default:
                     return "Keeper";
             }
@@ -690,6 +716,7 @@ public class Constants {
 
         public static String getKeeperTypeFromAppropriateString(String keeperName) {
             switch (keeperName) {
+<<<<<<< HEAD
                 case DogisterType_View:
                     return DogisterType;
                 case TherapistType_View:
@@ -700,6 +727,18 @@ public class Constants {
                     return BabySitterDisabilitiesType_View;
                 case HouseKeeperType_View:
                     return HouseKeeperType;
+=======
+                case "Dogister":
+                    return "dogister";
+                case "Therapist":
+                    return "therapist";
+                case "Babysitter":
+                    return "babysitter";
+                case "Babysitter for children with disabilities":
+                    return "babysitter_disabilities";
+                case "Housekeeper":
+                    return "housekeeper";
+>>>>>>> origin/master
                 default:
                     return "keeper";
             }

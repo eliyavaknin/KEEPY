@@ -9,7 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+<<<<<<< HEAD
         app:cardBackgroundColor="@color/purple_700"
+=======
+        app:cardBackgroundColor="@color/lavender"
+>>>>>>> origin/master
         app:cardCornerRadius="4dp"
         app:cardElevation="5dp">
 
@@ -25,7 +29,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Keeper Name"
+<<<<<<< HEAD
                 android:textColor="@color/white"
+=======
+                android:textColor="@color/purple_700"
+>>>>>>> origin/master
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -45,6 +53,7 @@
                 android:textColor="#E4E4E4" />
 
             <TextView
+<<<<<<< HEAD
                 android:id="@+id/service_phone_schedule_item_client"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,14 +61,22 @@
                 android:textColor="#E4E4E4" />
 
             <TextView
+=======
+>>>>>>> origin/master
                 android:id="@+id/service_time_schedule_item_client"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
                 android:paddingEnd="4dp"
+<<<<<<< HEAD
                 android:text="Waiting approval"
                 android:textAlignment="textEnd"
                 android:textColor="#FF5722"
+=======
+                android:text="Upcoming"
+                android:textAlignment="textEnd"
+                android:textColor="#00FF00"
+>>>>>>> origin/master
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+<<<<<<< HEAD
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -12,6 +13,13 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+=======
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+>>>>>>> origin/master
 import com.keepy.Constants;
 import com.keepy.models.ServiceRequest;
 import com.keepy.models.User;
@@ -205,9 +213,12 @@ public class AppViewModel extends ViewModel {
                     keeperRef.collection(Constants.ServiceRequestsCollection_incoming)
                             .add(request)
                             .addOnSuccessListener(value1 -> {
+<<<<<<< HEAD
                                 String id = value1.getId();
                                 request.setId(id);
                                 value1.update("id", id);
+=======
+>>>>>>> origin/master
                                 FirebaseFirestore.getInstance()
                                         .collection(Constants.UsersCollection)
                                         // we get the client by email
@@ -251,8 +262,12 @@ public class AppViewModel extends ViewModel {
     // we update the request in the client's outgoing requests collection
     // and in the keeper's incoming requests collection
     public void approveRequest(
+<<<<<<< HEAD
             ServiceRequest request
     ) {
+=======
+            ServiceRequest request) {
+>>>>>>> origin/master
         _loadingLivaData.postValue("Approving request...");
         FirebaseFirestore.getInstance()
                 .collection(Constants.UsersCollection)
@@ -298,7 +313,11 @@ public class AppViewModel extends ViewModel {
                                                                         return;
                                                                     }
                                                                     DocumentReference requestRef2 = value4.getDocuments().get(0).getReference();
+<<<<<<< HEAD
                                                                     requestRef2.update(Constants.ServiceRequestsCollection_statusField, ServiceRequest.Status.APPROVED)
+=======
+                                                                    requestRef2.update("status", 1)
+>>>>>>> origin/master
                                                                             .addOnSuccessListener(value5 -> {
                                                                                 _loadingLivaData.postValue(null);
                                                                             })
@@ -360,7 +379,11 @@ public class AppViewModel extends ViewModel {
                                     return;
                                 }
                                 DocumentReference requestRef = value1.getDocuments().get(0).getReference();
+<<<<<<< HEAD
                                 requestRef.update(Constants.ServiceRequestsCollection_statusField, ServiceRequest.Status.DECLINED)
+=======
+                                requestRef.update(Constants.ServiceRequestsCollection_statusField, 2)
+>>>>>>> origin/master
                                         .addOnSuccessListener(value2 -> {
                                             FirebaseFirestore.getInstance()
                                                     .collection(Constants.UsersCollection)
@@ -383,7 +406,11 @@ public class AppViewModel extends ViewModel {
                                                                         return;
                                                                     }
                                                                     DocumentReference requestRef2 = value4.getDocuments().get(0).getReference();
+<<<<<<< HEAD
                                                                     requestRef2.update(Constants.ServiceRequestsCollection_statusField, ServiceRequest.Status.DECLINED)
+=======
+                                                                    requestRef2.update("status", 2)
+>>>>>>> origin/master
                                                                             .addOnSuccessListener(value5 -> {
                                                                                 _loadingLivaData.postValue(null);
                                                                             })
@@ -445,14 +472,31 @@ public class AppViewModel extends ViewModel {
                         if (keeper == null || keeper.getmKeeperData() == null) continue;
                         Set<String> keeperTypes = keeper.getmKeeperData().getFees().keySet();
                         List<String> seen = new ArrayList<>();
+<<<<<<< HEAD
                         // if the client has no preferred keeper types
                         for (String type : keeperTypes) { // O(1) fixed size
                             if (searchKeeperTypes.contains(type)
                                     && !seen.contains(keeper.getmEmail())) {
+=======
+                        for (String type : keeperTypes) { // O(1) fixed size
+                            if (searchKeeperTypes.contains(type)
+                                    && user.getClientPrefs().contains(type) && !seen.contains(keeper.getmEmail())) {
+>>>>>>> origin/master
                                 keepers.add(keeper);
                                 seen.add(keeper.getmEmail());
                             }
                         }
+<<<<<<< HEAD
+=======
+                        if (keepers.isEmpty()) { // if no keepers are found, search for keepers that are not preferred
+                            for (String type : keeperTypes)
+                                if (searchKeeperTypes.contains(type)
+                                        && !seen.contains(keeper.getmEmail())) {
+                                    keepers.add(keeper);
+                                    seen.add(keeper.getmEmail());
+                                }
+                        }
+>>>>>>> origin/master
                     }
                     _keepersByType.postValue(keepers);
                     _loadingLivaData.postValue(null);
@@ -546,6 +590,7 @@ public class AppViewModel extends ViewModel {
                 });
     }
 
+<<<<<<< HEAD
     public void wantToBecomeClient() {
         User user = _userMutableLiveData.getValue();
         if (user == null) return;
@@ -612,4 +657,6 @@ public class AppViewModel extends ViewModel {
                             });
                 });
     }
+=======
+>>>>>>> origin/master
 }

@@ -1,14 +1,18 @@
 package com.keepy.models;
 
+<<<<<<< HEAD
 import com.keepy.Constants;
 import com.keepy.ServiceTime;
 
+=======
+>>>>>>> origin/master
 /*
     * This class is used to store the data of a service request
  */
 public class ServiceRequest {
 
 
+<<<<<<< HEAD
     public String getKeeperPhone() {
         return keeperPhone;
     }
@@ -27,6 +31,8 @@ public class ServiceRequest {
     private String keeperPhone;
     private String clientPhone;
 
+=======
+>>>>>>> origin/master
     public static class Status {
         public static final int WAITING = 0;
         public static final int APPROVED = 1;
@@ -45,8 +51,11 @@ public class ServiceRequest {
     private long date;
     private long requestDate;
 
+<<<<<<< HEAD
     private ServiceTime serviceTime = Constants.Utils.getDefaultServiceTime();
 
+=======
+>>>>>>> origin/master
     private String type;
     private String clientComment;
     private int status;
@@ -54,12 +63,18 @@ public class ServiceRequest {
 
     public ServiceRequest(String clientId, String keeperId, long date, long requestDate, String clientComment, int status,
                           String type,String location, String clientName, String keeperName,
+<<<<<<< HEAD
                           String clientEmail, String keeperEmail,
                           String clientPhone, String keeperPhone) {
         this.clientId = clientId;
         this.keeperId = keeperId;
         this.clientPhone = clientPhone;
         this.keeperPhone = keeperPhone;
+=======
+                          String clientEmail, String keeperEmail) {
+        this.clientId = clientId;
+        this.keeperId = keeperId;
+>>>>>>> origin/master
         this.clientEmail = clientEmail;
         this.keeperEmail = keeperEmail;
         this.location = location;
@@ -160,14 +175,20 @@ public class ServiceRequest {
         return date;
     }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> origin/master
     public void setDate(long date) {
         this.date = date;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     public long getRequestDate() {
         return requestDate;
     }
@@ -183,6 +204,7 @@ public class ServiceRequest {
     public void setStatus(int status) {
         this.status = status;
     }
+<<<<<<< HEAD
 
     public ServiceTime getServiceTime() {
         return serviceTime;
@@ -191,4 +213,6 @@ public class ServiceRequest {
     public void setServiceTime(ServiceTime serviceTime) {
         this.serviceTime = serviceTime;
     }
+=======
+>>>>>>> origin/master
 }

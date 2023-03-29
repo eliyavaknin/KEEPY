@@ -8,6 +8,7 @@
     android:translationY="50dp"
     tools:context=".UserPage">
 
+<<<<<<< HEAD
     <LinearLayout
         android:visibility="gone"
         android:id="@+id/client_Btn_layout"
@@ -28,6 +29,8 @@
             android:text="I want to become a client" />
     </LinearLayout>
 
+=======
+>>>>>>> origin/master
     <TextView
         android:id="@+id/tvtop"
         android:layout_width="match_parent"
@@ -38,6 +41,7 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@id/client_Btn_layout" />
 
     <TextView
@@ -52,6 +56,9 @@
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@id/tvtop" />
 
+=======
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> origin/master
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRequests"

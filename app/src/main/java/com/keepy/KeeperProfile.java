@@ -1,7 +1,10 @@
 package com.keepy;
 
+<<<<<<< HEAD
 import android.app.ProgressDialog;
 import android.app.Service;
+=======
+>>>>>>> origin/master
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +12,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+<<<<<<< HEAD
 import android.widget.TableLayout;
 import android.widget.TableRow;
+=======
+>>>>>>> origin/master
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
+<<<<<<< HEAD
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +44,19 @@ import java.util.Map;
 import java.util.Set;
 
 
+=======
+import com.keepy.behaviour.IKeeperProfile;
+import com.keepy.models.ServiceRequest;
+import com.keepy.models.User;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
+
+
+
+>>>>>>> origin/master
 public class KeeperProfile extends AlertDialog {
     private String removeLastIfNonAlpha(String str) {
         if (!Character.isAlphabetic(str.charAt(str.length() - 1)))
@@ -44,6 +64,7 @@ public class KeeperProfile extends AlertDialog {
         return str;
     }
 
+<<<<<<< HEAD
     private ServiceRequest serviceRequest;
 
     private final User keeper;
@@ -91,18 +112,29 @@ public class KeeperProfile extends AlertDialog {
         iKeeper.sendRequest(client, keeper, serviceRequest);
     }
 
+=======
+    private final User client;
+    private final IKeeperProfile iKeeper;
+
+>>>>>>> origin/master
     public KeeperProfile(@NonNull Context context,
                          User client,
                          User keeper,
                          List<ServiceRequest> existingRequestsList,
+<<<<<<< HEAD
                          IRequests requestsCallback,
+=======
+>>>>>>> origin/master
                          IKeeperProfile iKeeper) {
 
         super(context);
         this.iKeeper = iKeeper;
         this.client = client;
+<<<<<<< HEAD
         this.keeper = keeper;
         this.serviceRequest = new ServiceRequest();
+=======
+>>>>>>> origin/master
         View v = getLayoutInflater().inflate(R.layout.keeper_profile, null);
         setView(v);
         setButton(BUTTON_POSITIVE, "Close", (dialog, which) -> {
@@ -110,9 +142,14 @@ public class KeeperProfile extends AlertDialog {
         });
 
         TextView name = v.findViewById(R.id.keeper_profile_name);
+<<<<<<< HEAD
         LinearLayout serviceTypesTv = v.findViewById(R.id.keeper_profile_services);
         TextView location = v.findViewById(R.id.keeper_profile_locations_of_operation);
         TextView about = v.findViewById(R.id.keeper_profile_about);
+=======
+        TextView serviceTypesTv = v.findViewById(R.id.keeper_profile_services);
+        TextView location = v.findViewById(R.id.keeper_profile_locations_of_operation);
+>>>>>>> origin/master
         RatingBar rating = v.findViewById(R.id.keeper_profile_rating);
 
 
@@ -120,6 +157,7 @@ public class KeeperProfile extends AlertDialog {
         TextView already_rated = v.findViewById(R.id.already_rated);
         RatingBar rateMe = v.findViewById(R.id.keeper_profile_submit_rating);
         name.setText(keeper.getmFullName().isEmpty() ? "Annonymous" : keeper.getmFullName());
+<<<<<<< HEAD
         HashMap<String, Integer> serviceTypes = keeper.getmKeeperData().getFees();
 
         for (Map.Entry<String, Integer> entry : serviceTypes.entrySet()) {
@@ -136,10 +174,24 @@ public class KeeperProfile extends AlertDialog {
         location.setText(keeper.getmLocation());
         rating.setRating(keeper.getmKeeperData().getRating());
 
+=======
+        Collection<String> serviceTypes = keeper.getmKeeperData().getFees().keySet();
+        String types = "";
+        for (String type : serviceTypes) {
+            types += type + ", ";
+        }
+        types = removeLastIfNonAlpha(types);
+
+        serviceTypesTv.setText(types);
+
+        location.setText(keeper.getmLocation());
+        rating.setRating(keeper.getmKeeperData().getRating());
+>>>>>>> origin/master
         if (client.getRatedKeepers().contains(keeper.getmEmail())) {
             already_rated.setVisibility(View.VISIBLE);
             rateMe.setVisibility(View.GONE);
         }
+<<<<<<< HEAD
         else if(isBeforeServiceDate(serviceRequest.getServiceTime())) {
             already_rated.setEnabled(false);
             already_rated.setText("Rating can only be submitted after the service date");
@@ -154,6 +206,8 @@ public class KeeperProfile extends AlertDialog {
                 break;
             }
         rateMe.setEnabled(hasSentRequest);
+=======
+>>>>>>> origin/master
         rateMe.setOnRatingBarChangeListener((ratingBar, v1, b) -> {
             iKeeper.rateMe(client, keeper, v1);
             rateMe.setVisibility(View.GONE);
@@ -173,6 +227,7 @@ public class KeeperProfile extends AlertDialog {
                 sendRequestButton.setText("Request sent");
                 return;
             }
+<<<<<<< HEAD
 
         sendRequestButton.setOnClickListener(v1 -> {
             sendRequest(context, sendRequestButton,
@@ -295,11 +350,92 @@ public class KeeperProfile extends AlertDialog {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH) + 1;
+=======
+        sendRequestButton.setOnClickListener(v1 -> {
+            sendRequest(context, sendRequestButton, client, keeper);
+        });
+    }
+
+
+    private void sendRequest(Context context,
+                             Button requestButton,
+                             User client,
+                             User keeper) {
+        ServiceRequest sr = new ServiceRequest();
+        sr.setClientId(client.getmEmail());
+        sr.setKeeperId(keeper.getmUserID());
+        sr.setLocation(client.getmLocation());
+        sr.setDate(System.currentTimeMillis());
+        sr.setClientEmail(client.getmEmail());
+        sr.setKeeperEmail(keeper.getmEmail());
+        sr.setClientName(client.getmFullName());
+        sr.setKeeperName(keeper.getmFullName());
+        sr.setStatus(ServiceRequest.Status.WAITING);
+        String type = "";
+        Set<String> keys = keeper.getmKeeperData().getFees().keySet();
+        int i = 0;
+
+        // if the client has preferences
+        // then the type of the request
+        // will be the first preference
+        if (client.getClientPrefs() != null) {
+            for (String clientPref : client.getClientPrefs()) {
+                if (keys.contains(clientPref)) {
+                    type += clientPref;
+                    if (i != keys.size() - 1)
+                        type += ", ";
+                }
+                i++;
+            }
+            sr.setType(
+                    type.equals("") ?
+                            keys.toArray()[0].toString() :
+                            type
+            );
+        } else {
+            sr.setType(keys.toArray()[0].toString());
+        }
+        openDialogAddCommentToRequest(context, sr, keeper, requestButton);
+    }
+
+    // method used to open dialog for adding comment to request
+    // and submit send request to keeper
+    public void openDialogAddCommentToRequest(
+            Context context,
+            ServiceRequest serviceRequest,
+            User keeper,
+            Button requestButton) {
+        AddCommentToRequestDialog addCommentToRequestDialog = new AddCommentToRequestDialog(
+                context,
+                serviceRequest,
+                keeper,
+                requestButton);
+        addCommentToRequestDialog.show();
+    }
+
+
+    class AddCommentToRequestDialog extends android.app.AlertDialog {
+        private ServiceRequest serviceRequest;
+        private Button requestButton;
+        private User keeper;
+        private final TextView et;
+
+        public AddCommentToRequestDialog(
+                Context context,
+                ServiceRequest serviceRequest,
+                User keeper,
+                Button requestButton
+        ) {
+            super(context);
+            AddCommentToRequestDialog.this.setTitle("Keepy");
+            AddCommentToRequestDialog.this.setMessage("Leave blank if you don't want to add a comment");
+>>>>>>> origin/master
             LinearLayout ll = new LinearLayout(context);
             ll.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
             ));
+<<<<<<< HEAD
 
             TableLayout tableLayout = new TableLayout(context);
             tableLayout.setLayoutParams(new TableLayout.LayoutParams(
@@ -326,6 +462,8 @@ public class KeeperProfile extends AlertDialog {
                     Constants.PrefLang);
 
 
+=======
+>>>>>>> origin/master
             ll.setOrientation(LinearLayout.VERTICAL);
             et = new EditText(context);
             et.setLayoutParams(new ViewGroup.LayoutParams(
@@ -338,19 +476,28 @@ public class KeeperProfile extends AlertDialog {
             ll.addView(et);
             AddCommentToRequestDialog.this.setView(ll);
             AddCommentToRequestDialog.this.setButton(BUTTON_POSITIVE, "Send", (dialog, which) -> {
+<<<<<<< HEAD
                 onCommentAdded(et.getText().toString(), updatedRequest -> {
                     AddCommentToRequestDialog.this.dismiss();
                     onSendRequest.onSuccess(updatedRequest);
                     Toast.makeText(context, "Request sent successfully, you will be contacted by the keeper!", Toast.LENGTH_SHORT).show();
                 });
+=======
+                onCommentAdded(et.getText().toString());
+>>>>>>> origin/master
             });
             AddCommentToRequestDialog.this.setButton(BUTTON_NEGATIVE, "Cancel", (dialog, which) -> {
                 AddCommentToRequestDialog.this.dismiss();
             });
+<<<<<<< HEAD
+=======
+            this.serviceRequest = serviceRequest;
+>>>>>>> origin/master
             this.requestButton = requestButton;
             this.keeper = keeper;
         }
 
+<<<<<<< HEAD
 
         public void onCommentAdded(
                 String comment,
@@ -362,6 +509,17 @@ public class KeeperProfile extends AlertDialog {
                 requestButton.setEnabled(false);
                 requestButton.setText("Request sent");
             }
+=======
+        public void onCommentAdded(
+                String comment) {
+            if (comment.length() > 0) // if comment was added
+                serviceRequest.setClientComment(comment);
+            serviceRequest.setStatus(ServiceRequest.Status.WAITING);
+            iKeeper.sendRequest(client, keeper, serviceRequest);
+            requestButton.setEnabled(false);
+            requestButton.setText("Request sent");
+
+>>>>>>> origin/master
             Toast.makeText(
                     requestButton.getContext(),
                     "Request sent successfully!",
@@ -372,11 +530,19 @@ public class KeeperProfile extends AlertDialog {
             // in nested classes
             requestButton = null;
             keeper = null;
+<<<<<<< HEAD
             client = null;
             AddCommentToRequestDialog.this.dismiss();
             onSuccess.onSuccess(request);
             iKeeper.close();
             iKeeper = null;
+=======
+            serviceRequest = null;
+            AddCommentToRequestDialog.this.dismiss();
+            KeeperProfile.this.dismiss();
+
+            iKeeper.close();
+>>>>>>> origin/master
         }
     }
 

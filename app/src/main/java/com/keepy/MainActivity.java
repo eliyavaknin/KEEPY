@@ -2,6 +2,7 @@ package com.keepy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -12,6 +13,14 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import java.util.function.Predicate;
+=======
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+>>>>>>> origin/master
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.ButtonSignUp).setOnClickListener(view ->
                 opensignuppage());
+<<<<<<< HEAD
 
 
 
@@ -68,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+=======
+>>>>>>> origin/master
     }
 
     public void openHomepage() {

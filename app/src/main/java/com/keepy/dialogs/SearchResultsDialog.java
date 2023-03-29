@@ -9,7 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.keepy.R;
 import com.keepy.adapters.SearchResultsRv;
+<<<<<<< HEAD
 import com.keepy.behaviour.IRequests;
+=======
+>>>>>>> origin/master
 import com.keepy.behaviour.ISearchResultsDialog;
 import com.keepy.models.ServiceRequest;
 import com.keepy.models.User;
@@ -30,7 +33,10 @@ public class SearchResultsDialog extends AlertDialog {
                                User client,
                                List<User> keepers,
                                List<ServiceRequest> existingRequestsList,
+<<<<<<< HEAD
                                IRequests iRequests,
+=======
+>>>>>>> origin/master
                                ISearchResultsDialog iSearchResultsDialog) {
         super(context);
 
@@ -50,6 +56,10 @@ public class SearchResultsDialog extends AlertDialog {
         });
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
         // if there are no keepers -> show a -no results- message
         // else -> show the keepers
         if (keepers == null || keepers.size() > 0) {
@@ -60,7 +70,10 @@ public class SearchResultsDialog extends AlertDialog {
                             client,
                             keepers,
                             existingRequestsList1,
+<<<<<<< HEAD
                             iRequests,
+=======
+>>>>>>> origin/master
                             iSearchResultsDialog
                     ));
             rv.setLayoutManager(new LinearLayoutManager(context));

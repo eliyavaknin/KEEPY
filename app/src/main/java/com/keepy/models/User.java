@@ -5,7 +5,10 @@ import com.keepy.KeeperData;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Date;
+=======
+>>>>>>> origin/master
 import java.util.List;
 
 
@@ -140,5 +143,8 @@ public class User implements Serializable {
     public KeeperData getmKeeperData() {
         return mKeeperData;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 }

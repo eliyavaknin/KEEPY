@@ -9,7 +9,11 @@ android {
 
     defaultConfig {
         applicationId "com.keepy"
+<<<<<<< HEAD
         minSdk 27
+=======
+        minSdk 21
+>>>>>>> origin/master
         targetSdk 33
         versionCode 1
         versionName "1.0"

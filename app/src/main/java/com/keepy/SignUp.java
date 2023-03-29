@@ -2,12 +2,16 @@ package com.keepy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
 import android.app.ProgressDialog;
+=======
+>>>>>>> origin/master
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +19,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+=======
+import android.widget.Button;
+import android.widget.EditText;
+>>>>>>> origin/master
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,7 +45,11 @@ public class SignUp extends AppCompatActivity {
     private boolean mIsKeeper = false;
     private boolean misClientAndKeeper = false;
 
+<<<<<<< HEAD
     private String mLocation;
+=======
+
+>>>>>>> origin/master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +71,7 @@ public class SignUp extends AppCompatActivity {
             }
 
         });
+<<<<<<< HEAD
         Spinner residence = findViewById(R.id.location_Signup);
         ArrayAdapter<String> adapterItems = new ArrayAdapter<>(this, R.layout.list_item, Constants.places);
         residence.setAdapter(adapterItems);
@@ -71,6 +84,9 @@ public class SignUp extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+=======
+
+>>>>>>> origin/master
         mIsKeeperBtn = findViewById(R.id.isKeeper);
         mIsKeeperBtn.setOnClickListener(v -> {
             toggleIsKeeper();
@@ -93,6 +109,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
         TextView nameText = findViewById(R.id.nameSignup);
         mSignUp.setOnClickListener(v -> {
             if(nameText.getText().toString().isEmpty()){
@@ -104,6 +121,9 @@ public class SignUp extends AppCompatActivity {
                 Toast.makeText(v.getContext(), "Please select your residence", Toast.LENGTH_LONG).show();
                 return;
             }
+=======
+        mSignUp.setOnClickListener(v -> {
+>>>>>>> origin/master
             if (TextUtils.isEmpty(mEmail.getText().toString()) || !Patterns.EMAIL_ADDRESS.matcher(mEmail.getText().toString()).matches()) {
                 Toast.makeText(v.getContext(), "Invalid Email", Toast.LENGTH_LONG).show();
                 return;
@@ -117,6 +137,7 @@ public class SignUp extends AppCompatActivity {
                 Toast.makeText(v.getContext(), "You need to select at least one - Client or Keeper", Toast.LENGTH_LONG).show();
                 return;
             }
+<<<<<<< HEAD
             ProgressDialog progressDialog = new ProgressDialog(v.getContext());
             progressDialog.setMessage("Signing up...");
             progressDialog.setTitle("Keepy");
@@ -125,12 +146,17 @@ public class SignUp extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(mEmail.getText().toString(), mPassword.getText().toString())
                     .addOnCompleteListener(task -> {
                         progressDialog.dismiss();
+=======
+            mAuth.createUserWithEmailAndPassword(mEmail.getText().toString(), mPassword.getText().toString())
+                    .addOnCompleteListener(task -> {
+>>>>>>> origin/master
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("signup", "createUserWithEmail:success");
                             User newUser = new User(mEmail.getText().toString(),
                                     mIsClient || misClientAndKeeper, mIsKeeper || misClientAndKeeper
                             );
+<<<<<<< HEAD
                             newUser.setmLocation(mLocation);
                             newUser.setmFullName(nameText.getText().toString());
                             db.collection("Users")
@@ -138,6 +164,11 @@ public class SignUp extends AppCompatActivity {
                                     .addOnSuccessListener(documentReference -> {
                                         newUser.setmUserID(documentReference.getId());
                                         documentReference.update("mUserID", documentReference.getId());
+=======
+                            db.collection("Users")
+                                    .add(newUser)
+                                    .addOnSuccessListener(documentReference -> {
+>>>>>>> origin/master
                                         Log.d("signup", "DocumentSnapshot added with ID: " + documentReference.getId());
                                         openMainpage(newUser);
                                     })

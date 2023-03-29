@@ -9,7 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+<<<<<<< HEAD
         app:cardBackgroundColor="@color/purple_700"
+=======
+        app:cardBackgroundColor="@color/lavender"
+>>>>>>> origin/master
         app:cardCornerRadius="4dp"
         app:cardElevation="5dp">
 
@@ -25,7 +29,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Client Name"
+<<<<<<< HEAD
                 android:textColor="@color/white"
+=======
+                android:textColor="@color/purple_700"
+>>>>>>> origin/master
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -50,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="Date"
                 android:textColor="#E4E4E4" />
+<<<<<<< HEAD
 
             <TextView
                 android:id="@+id/service_phone_schedule_item_keeper"
@@ -57,6 +66,8 @@
                 android:layout_height="wrap_content"
                 android:text="Phone:"
                 android:textColor="#E4E4E4" />
+=======
+>>>>>>> origin/master
             <TextView
                 android:id="@+id/client_comment_schedule_item_keeper"
                 android:layout_width="match_parent"

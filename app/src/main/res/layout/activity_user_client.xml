@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<<<<<<< HEAD
 
 
     <LinearLayout
@@ -28,6 +29,8 @@
             android:text="I want to become a keeper" />
     </LinearLayout>
 
+=======
+>>>>>>> origin/master
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +41,11 @@
         android:paddingBottom="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@id/keeper_Btn_layout">
+=======
+        app:layout_constraintTop_toTopOf="parent">
+>>>>>>> origin/master
 
         <TextView
             android:id="@+id/Search"

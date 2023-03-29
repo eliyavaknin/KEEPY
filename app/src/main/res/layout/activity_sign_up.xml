@@ -28,12 +28,17 @@
             android:layout_height="563dp"
             android:background="@drawable/write_background"
             android:orientation="vertical"
+<<<<<<< HEAD
             android:paddingHorizontal="32dp"
             android:paddingVertical="8dp"
+=======
+            android:padding="32dp"
+>>>>>>> origin/master
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             tools:ignore="MissingConstraints">
+<<<<<<< HEAD
             <TextView
                 android:id="@+id/nameSignUpTitle"
                 android:layout_width="match_parent"
@@ -80,25 +85,43 @@
                     android:inputType="none" />
             </com.google.android.material.textfield.TextInputLayout>
 
+=======
+>>>>>>> origin/master
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
+=======
+                android:layout_height="43dp"
+>>>>>>> origin/master
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/inter"
                 android:text="Email"
                 android:textColor="#000000"
+<<<<<<< HEAD
                 android:textSize="18sp" />
+=======
+                android:textSize="25sp" />
+>>>>>>> origin/master
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
                 android:padding="4dp"
+=======
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittext_background"
+                android:ems="10"
+>>>>>>> origin/master
                 android:hint="example@gmail.com"
                 android:inputType="textPersonName"
                 android:textColor="#8e8e8e"
@@ -109,6 +132,7 @@
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Password"
@@ -116,19 +140,33 @@
 
                 android:textColor="#000000"
                 android:textSize="18sp"
+=======
+                android:layout_height="43dp"
+                android:layout_marginTop="2dp"
+                android:text="Password"
+                android:textColor="#000000"
+                android:textSize="25sp"
+>>>>>>> origin/master
                 android:fontFamily="@font/inter"
                 />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
+=======
+                android:layout_height="50dp"
+>>>>>>> origin/master
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
+<<<<<<< HEAD
                 android:padding="4dp"
                 android:hint="********"
+=======
+>>>>>>> origin/master
                 android:inputType="textPassword"
                 android:textColor="#8e8e8e"
                 android:textColorHint="#8e8e8e"
@@ -137,24 +175,39 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Confirm Password"
                 android:textColor="#000000"
                 android:textSize="18sp"
+=======
+                android:layout_height="43dp"
+                android:layout_marginTop="2dp"
+                android:text="Confirm Password"
+                android:textColor="#000000"
+                android:textSize="25sp"
+>>>>>>> origin/master
                 android:fontFamily="@font/inter" />
 
             <EditText
                 android:id="@+id/confirm_password"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="wrap_content"
+=======
+                android:layout_height="50dp"
+>>>>>>> origin/master
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
+<<<<<<< HEAD
                 android:padding="4dp"
                 android:hint="********"
 
+=======
+>>>>>>> origin/master
                 android:inputType="textPassword"
                 android:textColor="#8e8e8e"
                 android:textColorHint="#8e8e8e"
@@ -164,12 +217,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="Account type"
                 android:textSize="18sp"
+=======
+                android:text="Who are you?"
+                android:textSize="22sp"
+>>>>>>> origin/master
                 android:fontFamily="@font/inter"
                 android:paddingBottom="7dp"
                 android:textColor="@color/black"/>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -212,7 +274,14 @@
                 android:orientation="horizontal"
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="15dp"
+<<<<<<< HEAD
                 android:layout_marginEnd="40dp">
+=======
+                android:layout_marginEnd="40dp"
+
+
+                >
+>>>>>>> origin/master
 
                 <Button
                     android:id="@+id/isClientAndKeeper"
@@ -239,7 +308,11 @@
                 android:layout_below="@+id/editText1"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="32dp"
+<<<<<<< HEAD
                 android:layout_marginTop="16dp"
+=======
+                android:layout_marginTop="30dp"
+>>>>>>> origin/master
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/orange_button_background"
                 android:baselineAligned="false"
@@ -261,9 +334,15 @@
         android:layout_marginStart="32dp"
         android:fontFamily="@font/inter"
         android:paddingVertical="10dp"
+<<<<<<< HEAD
         android:text="Keepy - Sign Up"
         android:textColor="#ffffff"
         android:textSize="20sp"
+=======
+        android:text="Sign Up Page"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+>>>>>>> origin/master
         android:textStyle="bold"
 
         app:layout_constraintBottom_toTopOf="@+id/pageContainer"

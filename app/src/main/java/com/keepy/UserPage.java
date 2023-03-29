@@ -15,8 +15,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+<<<<<<< HEAD
 import android.widget.TextView;
 import android.widget.Toast;
+=======
+>>>>>>> origin/master
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +27,11 @@ import com.keepy.adapters.CustomArrayAdapter;
 import com.keepy.adapters.RequestsRvAdapter;
 import com.keepy.behaviour.IRequests;
 import com.keepy.behaviour.ISearchResultsDialog;
+<<<<<<< HEAD
 import com.keepy.dialogs.CalendarActivity;
+=======
+import com.keepy.dialogs.ScheduleActivity;
+>>>>>>> origin/master
 import com.keepy.dialogs.SearchResultsDialog;
 import com.keepy.models.ServiceRequest;
 import com.keepy.models.User;
@@ -38,6 +45,10 @@ public class UserPage extends AppCompatActivity implements IRequests {
 
     private AppViewModel viewModel;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     // indicates which view is currently displayed // --- // ----------------------------------------- //
     private boolean isClientView = true;
     private boolean isKeeperView = true;
@@ -51,6 +62,7 @@ public class UserPage extends AppCompatActivity implements IRequests {
         setContentView(R.layout.activity_user);
         ProgressDialog dialog = new ProgressDialog(this);
 
+<<<<<<< HEAD
 
         LinearLayout keeper_Btn_layout = findViewById(R.id.keeper_Btn_layout);
         LinearLayout client_Btn_layout = findViewById(R.id.client_Btn_layout);
@@ -90,6 +102,8 @@ public class UserPage extends AppCompatActivity implements IRequests {
             });
             builder.show();
         });
+=======
+>>>>>>> origin/master
         findViewById(R.id.logoutBtn).setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
         });
@@ -98,8 +112,11 @@ public class UserPage extends AppCompatActivity implements IRequests {
 
         findViewById(R.id.scheduleBtn).setOnClickListener(v ->
                 openSchedule());
+<<<<<<< HEAD
         findViewById(R.id.settingsBtn).setOnClickListener(v ->
                 openSettingPage());
+=======
+>>>>>>> origin/master
 
 
         Button switchViewToClient = findViewById(R.id.client_Btn);
@@ -109,6 +126,7 @@ public class UserPage extends AppCompatActivity implements IRequests {
         //  RecyclerView keeperScheduling = findViewById(R.id.rvKeeperRequests);
         clientRequests.setLayoutManager(new LinearLayoutManager(this));
         viewModel.incomingRequests.observe(this, requests -> {
+<<<<<<< HEAD
             if (requests != null && requests.size() > 0) {
                 clientRequests.setAdapter(new RequestsRvAdapter(requests,
                         UserPage.this,
@@ -119,6 +137,13 @@ public class UserPage extends AppCompatActivity implements IRequests {
             } else {
                 TextView noRequests = findViewById(R.id.tvtopx);
                 noRequests.setVisibility(View.VISIBLE);
+=======
+            if (requests != null) {
+                clientRequests.setAdapter(new RequestsRvAdapter(requests,
+                        UserPage.this,
+                        true,
+                        false));
+>>>>>>> origin/master
             }
         });
 
@@ -142,11 +167,18 @@ public class UserPage extends AppCompatActivity implements IRequests {
                     switchBothView();
                 } else if (user.getmIsClient()) {
                     switchClientView();
+<<<<<<< HEAD
                     keeper_Btn_layout.setVisibility(View.VISIBLE);
                 } else {
                     switchKeeperView();
                     client_Btn_layout.setVisibility(View.VISIBLE);
                 }
+=======
+                } else {
+                    switchKeeperView();
+                }
+
+>>>>>>> origin/master
                 if (user.getmIsClient()) {
                     attachClientSearchButtons();
                 }
@@ -156,7 +188,11 @@ public class UserPage extends AppCompatActivity implements IRequests {
         // observe changes on the loading data
         viewModel.loadingLivaData.observe(this, isLoading -> {
             if (isLoading != null) {
+<<<<<<< HEAD
                 dialog.setTitle(Constants.AppName);
+=======
+                dialog.setTitle("Keepy");
+>>>>>>> origin/master
                 dialog.setMessage(isLoading);
                 dialog.show();
                 return;
@@ -172,17 +208,32 @@ public class UserPage extends AppCompatActivity implements IRequests {
 
     }
 
+<<<<<<< HEAD
     SearchResultsDialog dialog_rec;
 
+=======
+    SearchResultsDialog dialog;
+    SearchResultsDialog dialog_rec;
+
+
+>>>>>>> origin/master
     // this method is used to attach the client's search buttons
     public void attachClientSearchButtons() {
         List<String> keeperTypes = Arrays.asList(
                 "Select Keeper Type",
+<<<<<<< HEAD
                 Constants.Utils.getKeeperNameAsAppropriateString(Constants.DogisterType),
                 Constants.Utils.getKeeperNameAsAppropriateString(Constants.TherapistType),
                 Constants.Utils.getKeeperNameAsAppropriateString(Constants.BabySitterType),
                 Constants.Utils.getKeeperNameAsAppropriateString(Constants.BabySitterDisabilitiesType),
                 Constants.Utils.getKeeperNameAsAppropriateString(Constants.HouseKeeperType)
+=======
+                Constants.Utils.getKeeperNameAsAppropriateString("dogister"),
+                Constants.Utils.getKeeperNameAsAppropriateString("therapist"),
+                Constants.Utils.getKeeperNameAsAppropriateString("babysitter"),
+                Constants.Utils.getKeeperNameAsAppropriateString("babysitter_disabilities"),
+                Constants.Utils.getKeeperNameAsAppropriateString("housekeeper")
+>>>>>>> origin/master
         );
         ArrayAdapter<String> adapter = new CustomArrayAdapter(this, android.R.layout.simple_spinner_item, keeperTypes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -235,16 +286,27 @@ public class UserPage extends AppCompatActivity implements IRequests {
 
 
         /*
+<<<<<<< HEAD
          * observe changes on the search results
          * and open the search results dialog with the results
          */
         viewModel.keepersByType.observe(this, keepers -> {
             if (keepers != null && dialog_rec == null) {
+=======
+        * observe changes on the search results
+        * and open the search results dialog with the results
+         */
+        viewModel.keepersByType.observe(this, keepers -> {
+            if (keepers != null) {
+>>>>>>> origin/master
                 User client = viewModel.userLiveData.getValue();
                 dialog_rec = new SearchResultsDialog(this, client,
                         keepers,
                         viewModel.outgoingRequests.getValue(),
+<<<<<<< HEAD
                         this,
+=======
+>>>>>>> origin/master
                         new ISearchResultsDialog() {
                             @Override
                             public void close() {
@@ -263,8 +325,11 @@ public class UserPage extends AppCompatActivity implements IRequests {
                             }
                         });
                 dialog_rec.show();
+<<<<<<< HEAD
                 dialog_rec.setOnCancelListener(dialog -> dialog_rec = null);
                 dialog_rec.setOnDismissListener(dialog -> dialog_rec = null);
+=======
+>>>>>>> origin/master
             }
         });
 
@@ -279,8 +344,14 @@ public class UserPage extends AppCompatActivity implements IRequests {
     }
 
 
+<<<<<<< HEAD
     /*
      * This method is used to switch the view to the both view.
+=======
+
+    /*
+    * This method is used to switch the view to the both view.
+>>>>>>> origin/master
      */
     private void switchClientView() {
         View clientView = findViewById(R.id.client_screen);
@@ -288,7 +359,10 @@ public class UserPage extends AppCompatActivity implements IRequests {
 
         clientView.setVisibility(View.VISIBLE);
         keeperView.setVisibility(View.GONE);
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         this.isClientView = true;
         this.isBothView = false;
         this.isKeeperView = false;
@@ -304,7 +378,10 @@ public class UserPage extends AppCompatActivity implements IRequests {
         keeperView.setVisibility(View.VISIBLE);
         clientView.setVisibility(View.GONE);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         this.isClientView = false;
         this.isBothView = false;
         this.isKeeperView = true;
@@ -332,7 +409,10 @@ public class UserPage extends AppCompatActivity implements IRequests {
         startActivity(intent);
     }
 
+<<<<<<< HEAD
     CalendarActivity calendarDialog;
+=======
+>>>>>>> origin/master
 
     // This method is used to open the schedule activity.
     // It is called when the user clicks on the "My Schedule" button.
@@ -345,6 +425,7 @@ public class UserPage extends AppCompatActivity implements IRequests {
             Snackbar.make(findViewById(R.id.mainLayout), "You need to be logged in to use these features", Snackbar.LENGTH_LONG).show();
             return;
         }
+<<<<<<< HEAD
         if (((incomingRequests == null
                 || incomingRequests.size() == 0) && user.getmIsClient() && isClientView)
                 && ((outgoingRequests == null
@@ -360,6 +441,23 @@ public class UserPage extends AppCompatActivity implements IRequests {
                 user.getmIsKeeper() && (isKeeperView) ? incomingRequests : outgoingRequests,
                 this);
         calendarDialog.show();
+=======
+
+        ScheduleActivity dialog;
+        if (user.getmIsClient() && isClientView) {
+            if (outgoingRequests != null && outgoingRequests.size() > 0) {
+
+                dialog = new ScheduleActivity(this, outgoingRequests, true);
+                dialog.show();
+            }
+
+        } else if (!user.getmIsKeeper() || !isClientView) {
+            if (incomingRequests != null && incomingRequests.size() > 0) {
+                dialog = new ScheduleActivity(UserPage.this, incomingRequests, false);
+                dialog.show();
+            }
+        }
+>>>>>>> origin/master
     }
 
 
@@ -385,6 +483,10 @@ public class UserPage extends AppCompatActivity implements IRequests {
     }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     // ---- May be used by other displayed activities ----
     public boolean isBothView() {
         return isBothView;
@@ -434,6 +536,7 @@ public class UserPage extends AppCompatActivity implements IRequests {
         builder.show();
     }
 
+<<<<<<< HEAD
     @Override
     public void onCanceled(ServiceRequest request) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -458,6 +561,8 @@ public class UserPage extends AppCompatActivity implements IRequests {
         startActivity(Intent);
     }
 
+=======
+>>>>>>> origin/master
 }
 
 

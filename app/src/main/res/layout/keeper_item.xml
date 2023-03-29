@@ -34,8 +34,12 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+<<<<<<< HEAD
             <LinearLayout
                 android:orientation="vertical"
+=======
+            <TextView
+>>>>>>> origin/master
                 android:id="@+id/keeperPrice_ClientSearch_rv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
